@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Typography } from "@/components/ui/typography";
 import CategoriesTyping from "@/components/categories-typing";
+import Typography from "@/components/ui/typography";
 
 export default function Home() {
   return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Typography } from "@/components/ui/typography";
+import Typography from "@/components/ui/typography";
 
 export default function Navbar() {
   return (

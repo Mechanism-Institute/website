@@ -7,19 +7,19 @@ export default function CategoriesTyping() {
     <TypeAnimation
       sequence={[
         "airdrops",
-        5000,
+        2000,
         "curation",
-        3000,
+        2000,
         "utility",
-        3000,
+        2000,
         "ownership",
-        3000,
+        2000,
         "engagement",
-        3000,
+        2000,
         "security",
-        3000,
+        2000,
         "anything",
-        3000,
+        2000,
       ]}
       wrapper="span"
       speed={{ type: "keyStrokeDelayInMs", value: 100 }}

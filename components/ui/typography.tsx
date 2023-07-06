@@ -38,4 +38,4 @@ const Typography = React.forwardRef<HTMLParagraphElement, TypographyProps>(
 );
 Typography.displayName = "Typography";
 
-export { Typography, typographyVariants };
+export default Typography;
