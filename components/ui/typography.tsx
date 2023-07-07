@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils";
 const typographyVariants = cva("", {
   variants: {
     variant: {
-      body: "leading-full",
+      body: "leading-full text-gray-900",
       "nav-link": "text-gray-600 uppercase",
       "hero-title": "text-[28px] leading-full text-gray-900",
+      "chat-text": "text-[20px] leading-[150%] font-normal",
     },
   },
   defaultVariants: {

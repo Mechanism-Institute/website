@@ -19,7 +19,7 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <main className="flex flex-1 flex-col pt-16">{children}</main>
+        <main className="flex flex-1 flex-col py-16">{children}</main>
       </body>
     </html>
   );
