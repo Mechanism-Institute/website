@@ -46,9 +46,9 @@ export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Me
       secondaryCategories: secondaryCategories?.map(parseCategory),
     };
   } catch (error) {
-    // console.error(
-    //   `Failed to map mechanism: ${JSON.stringify(airtableMechanism, null, 2)} - ${error}`,
-    // );
+    console.error(
+      `Failed to map mechanism: ${JSON.stringify(airtableMechanism, null, 2)} - ${error}`,
+    );
     return null;
   }
 }
