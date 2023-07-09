@@ -19,8 +19,9 @@ export function createFilterFormula({
   const categoryFilters = searchCategories.map((type) => `FIND('${type}',{Type})`).join(",");
 
   if (searchTerm) {
+    const upperSearchTerm = searchTerm.toLowerCase();
     const searchFilters = ["Name", "Type", "Description"]
-      .map((fieldName) => `FIND('${searchTerm}',{${fieldName}})`)
+      .map((fieldName) => `FIND('${upperSearchTerm}',LOWER({${fieldName}}))`)
       .join(",");
 
     return `AND(OR(${categoryFilters}), OR(${searchFilters}))`;
