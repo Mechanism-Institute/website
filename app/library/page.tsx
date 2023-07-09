@@ -1,8 +1,9 @@
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { CATEGORIES } from "@/config/categories";
 import CategoryFilter from "@/app/library/category-filter";
+import MechanismList from "@/components/mechanism-list";
+import { cn } from "@/utils/cn";
 
 function CategoryFilters({ className }: { className?: string }) {
   return (
@@ -14,7 +15,7 @@ function CategoryFilters({ className }: { className?: string }) {
   );
 }
 
-export default function Library() {
+export default async function Library() {
   return (
     <div className="flex flex-col gap-8">
       <label className="relative">
@@ -25,14 +26,10 @@ export default function Library() {
           width={30}
           height={30}
         />
-        <Input
-          name="search"
-          type="text"
-          placeholder="Search"
-          className="pl-[62px] py-5"
-        />
+        <Input name="search" type="text" placeholder="Search" className="pl-[62px] py-5" />
       </label>
       <CategoryFilters />
+      <MechanismList />
     </div>
   );
 }

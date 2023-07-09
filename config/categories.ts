@@ -9,7 +9,18 @@ export const CATEGORIES = [
   "liquidity",
   "budgeting",
   "value-capture",
-];
+] as const;
+
+export const CAPITALIZED_CATEGORIES: Record<MechanismCategory, string> = {
+  "value-capture": "Value Capture",
+  budgeting: "Budgeting",
+  liquidity: "Liquidity",
+  "economic-design": "Economic Design",
+  "value-allocation": "Value Allocation",
+  fundraising: "Fundraising",
+  governance: "Governance",
+  identity: "Identity",
+};
 
 export const CATEGORY_LABELS: Record<MechanismCategory, string> = {
   "value-capture": "Value Capture",

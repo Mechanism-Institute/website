@@ -5,8 +5,8 @@ import { Suspense, useCallback } from "react";
 import { CATEGORIES_BACKGROUNDS, CATEGORY_LABELS } from "@/config/categories";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
+import { cn } from "@/utils/cn";
 
 function CategoryFilter({ category }: { category: MechanismCategory }) {
   const pathname = usePathname();
@@ -20,9 +20,7 @@ function CategoryFilter({ category }: { category: MechanismCategory }) {
       const currentValues = params.getAll(name);
 
       if (currentValues.includes(value)) {
-        const newValues = currentValues.filter(
-          (currentValue) => currentValue !== value,
-        );
+        const newValues = currentValues.filter((currentValue) => currentValue !== value);
         params.delete(name);
         newValues.forEach((newValue) => params.append(name, newValue));
       } else {
@@ -39,9 +37,7 @@ function CategoryFilter({ category }: { category: MechanismCategory }) {
       className={cn(
         "flex items-center gap-1",
         "font-gotham leading-full font-medium py-2.5 px-4 text-sm rounded-3xl",
-        isActive
-          ? ["text-white", CATEGORIES_BACKGROUNDS[category]]
-          : "bg-[#E8DDD5] text-[#8D7C70]",
+        isActive ? ["text-white", CATEGORIES_BACKGROUNDS[category]] : "bg-[#E8DDD5] text-[#8D7C70]",
       )}
       href={pathname + "?" + createQueryString(category)}
     >

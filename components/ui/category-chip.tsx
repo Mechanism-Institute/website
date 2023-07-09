@@ -17,20 +17,14 @@ const categoryVariants = cva(
 
 type CategoryVariantProps = VariantProps<typeof categoryVariants>;
 
-export interface CategoryProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    CategoryVariantProps {
+export interface CategoryProps extends React.HTMLAttributes<HTMLSpanElement>, CategoryVariantProps {
   variant: MechanismCategory;
 }
 
 const CategoryChip = React.forwardRef<HTMLSpanElement, CategoryProps>(
   ({ className, variant, children, ...props }, ref) => {
     return (
-      <span
-        className={categoryVariants({ variant, className })}
-        ref={ref}
-        {...props}
-      >
+      <span className={categoryVariants({ variant, className })} ref={ref} {...props}>
         {CATEGORY_LABELS[variant]}
         {children}
       </span>

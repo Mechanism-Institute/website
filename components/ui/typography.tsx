@@ -2,7 +2,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 const typographyVariants = cva("", {
   variants: {
@@ -28,13 +28,7 @@ export interface TypographyProps
 const Typography = React.forwardRef<HTMLParagraphElement, TypographyProps>(
   ({ className, variant, asChild = false, as = "p", ...props }, ref) => {
     const Comp = asChild ? Slot : as;
-    return (
-      <Comp
-        className={cn(typographyVariants({ variant, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
+    return <Comp className={cn(typographyVariants({ variant, className }))} ref={ref} {...props} />;
   },
 );
 Typography.displayName = "Typography";
