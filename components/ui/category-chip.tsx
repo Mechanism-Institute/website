@@ -1,17 +1,7 @@
 import { cva, VariantProps } from "class-variance-authority";
 import { MechanismCategory } from "@/types/mechanism-category";
 import * as React from "react";
-
-const variant: Record<MechanismCategory, string> = {
-  "value-capture": "bg-orange",
-  budgeting: "bg-teal",
-  liquidity: "bg-blue",
-  "economic-design": "bg-purple",
-  "value-allocation": "bg-yellow",
-  fundraising: "bg-green",
-  governance: "bg-brown",
-  identity: "bg-pink",
-};
+import { CATEGORIES_BACKGROUNDS, CATEGORY_LABELS } from "@/config/categories";
 
 const categoryVariants = cva(
   [
@@ -20,21 +10,10 @@ const categoryVariants = cva(
   ],
   {
     variants: {
-      variant,
+      variant: CATEGORIES_BACKGROUNDS,
     },
   },
 );
-
-const labels: Record<MechanismCategory, string> = {
-  "value-capture": "Value Capture",
-  budgeting: "Budgeting",
-  liquidity: "Liquidity",
-  "economic-design": "Economic Design",
-  "value-allocation": "Value Allocation",
-  fundraising: "Fundraising",
-  governance: "Governance",
-  identity: "Identity",
-};
 
 type CategoryVariantProps = VariantProps<typeof categoryVariants>;
 
@@ -44,7 +23,7 @@ export interface CategoryProps
   variant: MechanismCategory;
 }
 
-const Category = React.forwardRef<HTMLSpanElement, CategoryProps>(
+const CategoryChip = React.forwardRef<HTMLSpanElement, CategoryProps>(
   ({ className, variant, children, ...props }, ref) => {
     return (
       <span
@@ -52,12 +31,12 @@ const Category = React.forwardRef<HTMLSpanElement, CategoryProps>(
         ref={ref}
         {...props}
       >
-        {labels[variant]}
+        {CATEGORY_LABELS[variant]}
         {children}
       </span>
     );
   },
 );
-Category.displayName = "Category";
+CategoryChip.displayName = "CategoryChip";
 
-export default Category;
+export default CategoryChip;

@@ -15,6 +15,9 @@ module.exports = {
         gotham: ["var(--font-gotham)"],
         mono: ["var(--font-mono)"],
       },
+      fontWeight: {
+        semilight: 350,
+      },
       colors: {
         brown: {
           DEFAULT: "#70594C",

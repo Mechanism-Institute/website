@@ -11,8 +11,9 @@ import {
 } from "@/components/ui/accordion";
 import Link from "next/link";
 import Globe from "@/components/ui/globe";
-import Category from "@/components/ui/category";
+import CategoryChip from "@/components/ui/category-chip";
 import { HTMLProps, useEffect, useRef, useState } from "react";
+import { Input } from "@/components/ui/input";
 
 function Organization({ value }: { value: string }) {
   return (
@@ -68,7 +69,7 @@ function AirdropAction({ value }: { value: string }) {
             specific group of people or randomly to anyone who meets certain
             criteria...
           </Typography>
-          <Category variant="value-allocation" className="mt-4" />
+          <CategoryChip variant="value-allocation" className="mt-4" />
         </div>
       </AccordionContent>
     </AccordionItem>
@@ -100,8 +101,8 @@ function StakingGauge({ value }: { value: string }) {
             criteria...
           </Typography>
           <div className="mt-4 flex gap-2">
-            <Category variant="value-allocation" />
-            <Category variant="budgeting" />
+            <CategoryChip variant="value-allocation" />
+            <CategoryChip variant="budgeting" />
           </div>
         </div>
       </AccordionContent>
@@ -128,7 +129,7 @@ function AllPlayAuction({ value }: { value: string }) {
           <Typography className="text-gray-700 font-normal leading-[150%] py-4 border-y border-divider">
             Auctions in which all bidders must pay their bid.
           </Typography>
-          <Category variant="fundraising" className="mt-4" />
+          <CategoryChip variant="fundraising" className="mt-4" />
         </div>
       </AccordionContent>
     </AccordionItem>
@@ -168,9 +169,9 @@ function FirstResponseBubble({
         variant="chat-text"
         className="flex items-baseline gap-x-1 gap-y-[3px] self-stretch flex-wrap pb-4"
       >
-        Your solution requires <Category variant="fundraising" />,
-        <Category variant="budgeting" />
-        and <Category variant="value-allocation" />
+        Your solution requires <CategoryChip variant="fundraising" />,
+        <CategoryChip variant="budgeting" />
+        and <CategoryChip variant="value-allocation" />
       </Typography>
       <div className="flex flex-col gap-2">
         <Typography variant="chat-text" className="leading-[175%] mt-4">
@@ -295,12 +296,12 @@ export default function FakeChat({ className }: { className?: string }) {
             height={14}
           />
         </div>
-        <input
+        <Input
           onClick={() => setDisplayChat(true)}
           name="search"
           type="text"
           placeholder="Is there anything else you’d like to know?"
-          className="w-full py-4 pl-6 pr-[60px] leading-full rounded-2xl"
+          className="pr-[62px]"
         />
       </label>
     </div>
