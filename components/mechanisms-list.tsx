@@ -6,6 +6,7 @@ import Typography from "@/components/ui/typography";
 import { Fragment, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
+import { useRouter } from "next/navigation";
 
 function Skeletons() {
   return (
@@ -21,9 +22,14 @@ function Skeletons() {
 }
 
 export default function MechanismsList() {
+  const router = useRouter();
   const { ref, inView } = useInView();
   const { data, status, hasNextPage, fetchNextPage, isFetchingNextPage } = useMechanismQuery();
   const isEmpty = status === "success" && data.pages[0].mechanisms.length === 0;
+
+  const clearFilters = () => {
+    router.push("/library");
+  };
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -32,6 +38,17 @@ export default function MechanismsList() {
       fetchNextPage().then();
     }
   }, [inView, fetchNextPage]);
+
+  if (isEmpty) {
+    return (
+      <div className="flex flex-col items-center justify-center w-full h-full mt-20 gap-8">
+        <Typography variant="hero-title">No mechanisms with the criteria found</Typography>
+        <Button variant="outline" onClick={clearFilters}>
+          Clear filters
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -42,7 +59,6 @@ export default function MechanismsList() {
           <div>Oops, there was something wrong</div>
         ) : (
           <>
-            {isEmpty && <Typography className="mx-auto">No mechanisms yet</Typography>}
             {data?.pages.map((page, index) => (
               <Fragment key={`page_${index}`}>
                 {page.mechanisms.map((mechanism) => (
