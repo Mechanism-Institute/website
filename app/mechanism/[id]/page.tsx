@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     );
 
   return (
-    <div className="flex gap-[120px] relative">
+    <div className="flex flex-col lg:flex-row gap-[120px] relative">
       <Image
         src="/watermark.svg"
         alt="watermakr"
