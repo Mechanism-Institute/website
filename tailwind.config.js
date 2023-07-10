@@ -25,6 +25,9 @@ module.exports = {
         pink: {
           DEFAULT: "#EBA5B8",
         },
+        stone: {
+          DEFAULT: "#231F20",
+        },
         gray: {
           50: "#FBFBFA",
           100: "#F8F7F6",

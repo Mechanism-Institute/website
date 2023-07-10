@@ -3,6 +3,7 @@ import Image from "next/image";
 import CategoryTag from "@/components/ui/category-tag";
 import Link from "next/link";
 import Typography from "@/components/ui/typography";
+import ArrowLeft from "@/components/ui/arrow-left";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const mechanism = await getMechanism(params.id);
@@ -50,7 +51,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <div className="flex flex-1 z-10">
         <div className="flex flex-col max-w-[720px] gap-12">
           <Link href="/library" className="flex gap-2">
-            <Image src="/arrow-left.svg" alt="arrow left" width={16} height={16} />
+            <ArrowLeft />
             <Typography>Back to Library</Typography>
           </Link>
           <div className="flex flex-col gap-6 font-gotham">
