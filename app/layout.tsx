@@ -2,7 +2,7 @@ import "./globals.css";
 import { gotham, robotoMono } from "@/fonts";
 import { MechanismCategory } from "@/types/mechanism-category";
 import Providers from "@/components/providers";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/shadui";
 import Navbar from "@/components/navbar";
 
 // this is needed because otherwise the tailwind JIT compiler will not be able to find the dynamic classes

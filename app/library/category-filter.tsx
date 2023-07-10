@@ -6,7 +6,7 @@ import { CATEGORIES_BACKGROUNDS, CATEGORY_LABELS } from "@/config/categories";
 import { usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { X } from "lucide-react";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/shadui";
 
 function Filter({ category }: { category: MechanismCategory }) {
   const pathname = usePathname();

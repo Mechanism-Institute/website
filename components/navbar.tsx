@@ -7,8 +7,12 @@ import { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { Menu } from "lucide-react";
 import { Transition } from "@headlessui/react";
+import SupporterDialog from "@/components/supporter-dialog";
+import { useAtom } from "jotai";
+import { supporterDialogAtom } from "@/state/supporter-atom";
 
 export default function Navbar() {
+  const [, setDialogOpen] = useAtom(supporterDialogAtom);
   const [open, setOpen] = useState(false);
 
   return (
@@ -24,8 +28,15 @@ export default function Navbar() {
         <Typography variant="nav-link" asChild>
           <Link href="/library">Library</Link>
         </Typography>
-        <Typography variant="nav-link" asChild>
-          <Link href="/get-involved">Get Involved</Link>
+        <Typography
+          className="cursor-pointer"
+          variant="nav-link"
+          onClick={() => {
+            setOpen(false);
+            setDialogOpen(true);
+          }}
+        >
+          Get Involved
         </Typography>
       </div>
 
@@ -57,12 +68,19 @@ export default function Navbar() {
                 Library
               </Link>
             </Typography>
-            <Typography variant="nav-link" asChild>
-              <Link href="/get-involved">Get Involved</Link>
+            <Typography
+              variant="nav-link"
+              onClick={() => {
+                setOpen(false);
+                setDialogOpen(true);
+              }}
+            >
+              Get Involved
             </Typography>
           </Transition>
         </Dialog.Root>
       </div>
+      <SupporterDialog />
     </nav>
   );
 }

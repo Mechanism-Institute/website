@@ -1,7 +1,7 @@
 import { CATEGORIES } from "@/config/categories";
 import CategoryFilter from "@/app/library/category-filter";
 import MechanismsList from "@/components/mechanisms-list";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/shadui";
 import SearchBar from "@/app/library/search-bar";
 
 function CategoryFilters({ className }: { className?: string }) {

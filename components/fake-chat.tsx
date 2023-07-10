@@ -13,7 +13,7 @@ import Globe from "@/components/ui/globe";
 import CategoryTag from "@/components/ui/category-tag";
 import { HTMLProps, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/shadui";
 import CategoryCircle from "@/components/ui/category-circle";
 
 function Organization({ value }: { value: string }) {
