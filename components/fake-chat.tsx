@@ -15,6 +15,7 @@ import { HTMLProps, useEffect, useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/utils/shadui";
 import CategoryCircle from "@/components/ui/category-circle";
+import ArrowLeft from "@/components/ui/arrow-left";
 
 function Organization({ value }: { value: string }) {
   return (
@@ -206,7 +207,7 @@ function Chat() {
   return (
     <div className="transition-opacity ease-in duration-700 opacity-100 flex flex-col gap-6">
       <div className="flex items-center gap-2">
-        <Image src="/arrow-left.svg" alt="arrow-left" width={16} height={16} />
+        <ArrowLeft />
         <Typography>Back</Typography>
       </div>
       <div
