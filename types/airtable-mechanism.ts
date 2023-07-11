@@ -8,7 +8,9 @@ type Fields = {
   Name: string;
   Description: string;
   Type: string[];
-  Implementations: string;
+  Implementations: string[];
+  Resources: string;
   Upvotes: number;
   Approved: boolean;
+  Discussion: string;
 };

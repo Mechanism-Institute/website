@@ -15,6 +15,7 @@ test("parseAirtableMechanism", () => {
       Approved: true,
       Upvotes: 0,
       Implementations: "",
+      Discussion: "Discussion",
     },
   };
 
@@ -28,6 +29,8 @@ test("parseAirtableMechanism", () => {
     expect(result.name).toBe("Test Mechanism");
     expect(result.description).toBe("This is a test mechanisms");
     expect(result.category).toBe("value-allocation");
+    expect(result.category).toBe("value-allocation");
+    expect(result.discussion).toBe("Discussion");
     expect(result.secondaryCategories).toEqual(undefined);
   } else {
     throw new Error("mapMechanism returned null");
@@ -50,6 +53,7 @@ test("parseAirtableMechanism with secondary categories", () => {
       Approved: true,
       Upvotes: 0,
       Implementations: "",
+      Discussion: "Discussion",
     },
   };
 
@@ -80,6 +84,7 @@ test("parseAirtableMechanism with invalid category", () => {
       Approved: true,
       Upvotes: 0,
       Implementations: "",
+      Discussion: "Discussion",
     },
   };
 

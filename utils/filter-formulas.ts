@@ -1,7 +1,7 @@
 import { MechanismCategory } from "@/types/mechanism-category";
 import { CAPITALIZED_CATEGORIES } from "@/config/categories";
 
-export function createFilterFormula({
+export function createMechanismsSearchFilterFormula({
   categories,
   searchTerm,
 }: {
@@ -28,4 +28,8 @@ export function createFilterFormula({
   }
 
   return `OR(${categoryFilters})`;
+}
+
+export function createImplementationsIdsFilterFormula(ids: string[]) {
+  return `OR(${ids.map((id) => `RECORD_ID() = '${id}'`).join(", ")})`;
 }
