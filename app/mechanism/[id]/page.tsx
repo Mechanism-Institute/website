@@ -81,7 +81,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
       </div>
       <div className="flex flex-1 z-10">
-        <div className="flex flex-col max-w-[720px] gap-12">
+        <div className="flex flex-col max-w-[720px] lg:w-full gap-12">
           <Link href="/library" className="flex gap-2">
             <ArrowLeft />
             <Typography>Back to Library</Typography>
