@@ -21,7 +21,7 @@ export default function Navbar() {
 
   const navLinkClasses = "cursor-pointer hover:opacity-70 transition-opacity duration-300";
   const activeClasses =
-    "underline underline-offset-[48px] decoration-4 decoration-orange text-orange";
+    "underline underline-offset-[44px] decoration-4 decoration-gray-900 text-gray-900";
 
   return (
     <nav className="flex items-center justify-between w-full px-2 py-8 border-b border-divider">
