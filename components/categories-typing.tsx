@@ -24,7 +24,7 @@ export default function CategoriesTyping() {
       wrapper="span"
       speed={{ type: "keyStrokeDelayInMs", value: 100 }}
       className={
-        "text-orange text-[28px] leading-full text-gray-900 after:-mx-2 after:opacity-50 block md:inline-block"
+        "leading-full -ml-1 -mr-2 text-gray-900 after:text-gray-900 after:-ml-1 after:opacity-80 inline-block"
       }
       repeat={Infinity}
     />

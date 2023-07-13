@@ -5,7 +5,7 @@ import ArrowLeft from "@/components/ui/arrow-left";
 
 export default function Page() {
   return (
-    <div className="flex flex-col lg:flex-row gap-[120px] relative">
+    <div className="flex flex-col lg:flex-row gap-[120px] relative mt-8 md:mt-16 pb-8 md:pb-16">
       <div className="w-[240px] hidden lg:block">
         <Image
           className="absolute top-0"

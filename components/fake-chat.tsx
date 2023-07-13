@@ -1,5 +1,7 @@
 "use client";
 
+import { Dispatch, SetStateAction } from "react";
+import CategoriesTyping from "@/components/categories-typing";
 import Typography from "@/components/ui/typography";
 import Image from "next/image";
 import {
@@ -16,17 +18,24 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/utils/shadui";
 import CategoryCircle from "@/components/ui/category-circle";
 import ArrowLeft from "@/components/ui/arrow-left";
+import clsx from "clsx";
+
+interface DisplayChatProps {
+  className?: string;
+  displayChat?: boolean;
+  setDisplayChat: Dispatch<SetStateAction<boolean>>;
+}
 
 function Organization({ value }: { value: string }) {
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger className="flex gap-2 items-center">
+      <AccordionTrigger className="flex items-center gap-2">
         <Image src="/cow-swap.svg" alt="cow-swap" width={40} height={40} />
         <div className="flex flex-col items-start flex-1">
-          <Typography variant="chat-text" className="text-gray-700 leading-6 font-medium">
+          <Typography variant="chat-text" className="font-medium leading-6 text-gray-700">
             Cow Swap
           </Typography>
-          <Typography className="text-orange underline flex gap-2" asChild>
+          <Typography className="flex gap-2 underline text-orange" asChild>
             <Link href="https://cowswap.com">
               <Globe className="inline" /> cowswap.app
             </Link>
@@ -46,19 +55,19 @@ function AirdropAction({ value }: { value: string }) {
   return (
     <AccordionItem value={value}>
       <AccordionTrigger>
-        <div className="flex gap-2 items-center justify-between flex-1">
-          <div className="flex gap-2 items-center">
-            <Typography variant="chat-text" className="text-gray-700 leading-6 font-medium inline">
+        <div className="flex items-center justify-between flex-1 gap-2">
+          <div className="flex items-center gap-2">
+            <Typography variant="chat-text" className="inline font-medium leading-6 text-gray-700">
               Airdrop
             </Typography>
             <Typography className="inline leading-[24px] font-[350] text-gray-400 text-sm">
               (Merkle Drop)
             </Typography>
           </div>
-          <CategoryCircle variant="value-allocation" className=" mr-4" />
+          <CategoryCircle variant="value-allocation" className="mr-4 " />
         </div>
       </AccordionTrigger>
-      <AccordionContent className="border-t-0 pt-0">
+      <AccordionContent className="pt-0 border-t-0">
         <div>
           <Typography className="text-gray-700 font-normal leading-[150%] py-4 border-y border-divider">
             A distribution mechanism where tokens are given away for free to a specific group of
@@ -75,23 +84,23 @@ function StakingGauge({ value }: { value: string }) {
   return (
     <AccordionItem value={value}>
       <AccordionTrigger>
-        <div className="flex gap-2 items-center justify-between flex-1">
-          <Typography variant="chat-text" className="text-gray-700 leading-6 font-medium inline">
+        <div className="flex items-center justify-between flex-1 gap-2">
+          <Typography variant="chat-text" className="inline font-medium leading-6 text-gray-700">
             Staking Gauges
           </Typography>
-          <div className="flex  mr-4">
+          <div className="flex mr-4">
             <CategoryCircle variant="value-allocation" className="z-[1] -mr-2" />
             <CategoryCircle variant="budgeting" className="z-[2]" />
           </div>
         </div>
       </AccordionTrigger>
-      <AccordionContent className="border-t-0 pt-0">
+      <AccordionContent className="pt-0 border-t-0">
         <div>
           <Typography className="text-gray-700 font-normal leading-[150%] py-4 border-y border-divider">
             A distribution mechanism where tokens are given away for free to a specific group of
             people or randomly to anyone who meets certain criteria...
           </Typography>
-          <div className="mt-4 flex gap-2">
+          <div className="flex gap-2 mt-4">
             <CategoryTag variant="value-allocation" />
             <CategoryTag variant="budgeting" />
           </div>
@@ -105,14 +114,14 @@ function AllPlayAuction({ value }: { value: string }) {
   return (
     <AccordionItem value={value}>
       <AccordionTrigger>
-        <div className="flex gap-2 items-center justify-between flex-1">
-          <Typography variant="chat-text" className="text-gray-700 leading-6 font-medium inline">
+        <div className="flex items-center justify-between flex-1 gap-2">
+          <Typography variant="chat-text" className="inline font-medium leading-6 text-gray-700">
             All-pay Auction
           </Typography>
           <CategoryCircle variant="fundraising" className="mr-4" />
         </div>
       </AccordionTrigger>
-      <AccordionContent className="border-t-0 pt-0">
+      <AccordionContent className="pt-0 border-t-0">
         <div>
           <Typography className="text-gray-700 font-normal leading-[150%] py-4 border-y border-divider">
             Auctions in which all bidders must pay their bid.
@@ -127,7 +136,7 @@ function AllPlayAuction({ value }: { value: string }) {
 function QuestionBubble({ children, className, ...props }: HTMLProps<HTMLDivElement>) {
   return (
     <div className={cn(className, "rounded-3xl p-6 bg-gray-600 max-w-[532px]")} {...props}>
-      <Typography variant="chat-text" className="text-gray-100 font-medium">
+      <Typography variant="chat-text" className="font-medium text-gray-100">
         {children}
       </Typography>
     </div>
@@ -205,13 +214,9 @@ function Chat() {
   }, [messagesCount, isIntervalActive]);
 
   return (
-    <div className="transition-opacity ease-in duration-700 opacity-100 flex flex-col gap-6">
-      <div className="flex items-center gap-2">
-        <ArrowLeft />
-        <Typography>Back</Typography>
-      </div>
+    <div className="flex flex-col gap-4 transition-opacity duration-700 ease-in opacity-100">
       <div
-        className="flex flex-col items-end gap-6 p-6 rounded-3xl bg-white h-[500px] overflow-y-auto scroll-smooth"
+        className="flex flex-col items-end h-[calc(100vh-210px)] gap-4 overflow-y-auto scroll-smooth pt-16"
         ref={chatContainerRef}
       >
         <QuestionBubble
@@ -243,23 +248,78 @@ function Chat() {
   );
 }
 
-export default function FakeChat({ className }: { className?: string }) {
-  const [displayChat, setDisplayChat] = useState(false);
+function AirplaneIcon({ className }: { className?: string }) {
   return (
-    <div className={cn("max-w-[700px] w-full flex flex-col gap-6 rounded-3xl", className)}>
-      {displayChat && <Chat />}
-      <label className="relative">
-        <div className="flex items-center justify-center w-[30px] h-[30px] bg-gray-400 rounded-full absolute pointer-events-none top-1/2 -translate-y-1/2 right-6">
-          <Image src="/paper-plane.svg" alt="paper-plane" width={14} height={14} />
-        </div>
-        <Input
-          onClick={() => setDisplayChat(true)}
-          name="search"
-          type="text"
-          placeholder="Is there anything else you’d like to know?"
-          className="pr-[62px]"
-        />
-      </label>
+    <div
+      className={clsx(
+        "flex items-center justify-center w-[30px] h-[30px] bg-gray-400 rounded-full group-hover:bg-gray-900 transition-color duration-300",
+        className,
+      )}
+    >
+      <Image src="/paper-plane.svg" alt="paper-plane" width={14} height={14} />
+    </div>
+  );
+}
+
+function DynamicPlaceholder({ setDisplayChat }: DisplayChatProps) {
+  return (
+    <div
+      onClick={() => setDisplayChat(true)}
+      className="flex items-center justify-between w-full px-6 py-4 transition duration-300 bg-white cursor-pointer rounded-2xl group hover:shadow-medium"
+    >
+      <Typography className="leading-full text-[14px] md:text-[16px] text-gray-400">
+        <span>Solve</span> <CategoriesTyping /> <span>with mechanism design</span>
+      </Typography>
+      <AirplaneIcon />
+    </div>
+  );
+}
+
+export default function FakeChat({ className, setDisplayChat, displayChat }: DisplayChatProps) {
+  const [value, setValue] = useState("");
+  const [showFinalMessage, setShowFinalMessage] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const inputHasValue = value.length > 0;
+
+  const onKeyUp = (inputRef: any) => {
+    setValue(inputRef.current.value);
+  };
+
+  const onKeyDown = (e: any) => {
+    if (e.keyCode === 13) {
+      setShowFinalMessage(inputHasValue);
+    }
+  };
+
+  return (
+    <div className={cn("max-w-[700px] w-full flex flex-col gap-4 rounded-3xl", className)}>
+      {displayChat ? (
+        <>
+          <Chat />
+          {/* {showFinalMessage && <div>Final message goes here</div>} */}
+          <label className="relative">
+            <Input
+              name="search"
+              type="text"
+              placeholder="Is there anything else you’d like to know?"
+              className="pr-[62px]"
+              ref={inputRef}
+              onKeyUp={() => onKeyUp(inputRef)}
+              onKeyDown={(e) => onKeyDown(e)}
+              onClick={() => setShowFinalMessage(inputHasValue)}
+              autoComplete="off"
+            />
+            <AirplaneIcon
+              className={clsx(
+                "absolute -translate-y-1/2 top-1/2 right-6",
+                inputHasValue && "bg-gray-900",
+              )}
+            />
+          </label>
+        </>
+      ) : (
+        <DynamicPlaceholder setDisplayChat={setDisplayChat} />
+      )}
     </div>
   );
 }

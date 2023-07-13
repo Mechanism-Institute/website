@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       >
         <Providers>
           <Navbar />
-          <main className="flex flex-1 flex-col py-8 lg:py-16">{children}</main>
+          <main className="flex flex-col flex-1">{children}</main>
         </Providers>
       </body>
     </html>

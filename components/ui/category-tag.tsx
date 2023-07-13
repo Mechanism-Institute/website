@@ -6,7 +6,7 @@ import { CATEGORIES_BACKGROUNDS, CATEGORY_LABELS } from "@/config/categories";
 const categoryVariants = cva(
   [
     "font-gotham rounded-3xl border-2 border-white text-white shadow-category-tag",
-    "px-3 py-2 inline-flex gap-1 items-center",
+    "px-3 py-1 inline-flex gap-1 items-center leading-none",
   ],
   {
     variants: {

@@ -1,16 +1,23 @@
-import CategoriesTyping from "@/components/categories-typing";
-import Typography from "@/components/ui/typography";
+"use client";
+
 import FakeChat from "@/components/fake-chat";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [displayChat, setDisplayChat] = useState(false);
   return (
     <>
-      <div className="mt-[88px] mb-12 flex flex-col">
-        <Typography as="h1" className="mb-12 mx-auto" variant="hero-title">
-          <span>Solve</span> <CategoriesTyping /> <span>with mechanism design</span>
-        </Typography>
+      <div className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-106px)]">
+        {!displayChat && (
+          <div className="mb-[88px] flex flex-col">
+            <div className="flex items-center justify-center ">
+              <Image src="/hero.svg" alt="" width={1130} height={270} />
+            </div>
+          </div>
+        )}
+        <FakeChat className="mx-auto" displayChat={displayChat} setDisplayChat={setDisplayChat} />
       </div>
-      <FakeChat className="mx-auto" />
     </>
   );
 }
