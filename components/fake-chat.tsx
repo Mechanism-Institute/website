@@ -221,16 +221,17 @@ function UserInteraction({
   onAnswerAnimationEnd: () => void;
 }) {
   const [showAnswer, setShowAnswer] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setShowAnswer(true);
-    }, 2000);
-  }, []);
-
   return (
     <>
-      <QuestionBubble className="self-end chat-message" onAnimationEnd={onQuestionAnimationEnd}>
+      <QuestionBubble
+        className="self-end chat-message"
+        onAnimationEnd={() => {
+          onQuestionAnimationEnd();
+          setTimeout(() => {
+            setShowAnswer(true);
+          }, 2000);
+        }}
+      >
         {children}
       </QuestionBubble>
       {showAnswer ? (
@@ -344,7 +345,7 @@ function Chat() {
           onChange={(e) => setMessage(e.target.value)}
           name="search"
           type="text"
-          placeholder="Is there anything else you’d like to know?"
+          placeholder="Describe your challenge, get solutions."
           className="pr-[62px]"
           autoComplete="off"
         />
