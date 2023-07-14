@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback } from "react";
+import { storeLibrarySearch } from "@/lib/store-user-input";
 
 function Bar() {
   const router = useRouter();
@@ -26,6 +27,7 @@ function Bar() {
       search: HTMLInputElement;
     };
     const search = formElements.search.value;
+    storeLibrarySearch(search);
     router.push(pathname + "?" + createQueryString(search));
   };
 
