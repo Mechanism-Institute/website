@@ -134,7 +134,10 @@ function AllPlayAuction({ value }: { value: string }) {
 
 function QuestionBubble({ children, className, ...props }: HTMLProps<HTMLDivElement>) {
   return (
-    <div className={cn(className, "rounded-3xl p-6 bg-gray-600 max-w-[532px]")} {...props}>
+    <div
+      className={cn(className, "rounded-3xl p-6 bg-gray-600 max-w-[532px] animate-fade-in")}
+      {...props}
+    >
       <Typography variant="chat-text" className="font-medium text-gray-100">
         {children}
       </Typography>
@@ -146,7 +149,10 @@ function UserAnswerBubble({ className, ...props }: HTMLProps<HTMLDivElement>) {
   const [, setSupportDialogOpen] = useAtom(supporterDialogAtom);
   return (
     <div
-      className={cn("flex flex-col p-6 bg-gray-300 max-w-[532px] rounded-3xl gap-2", className)}
+      className={cn(
+        "flex flex-col p-6 bg-gray-300 max-w-[532px] rounded-3xl gap-2 animate-fade-in",
+        className,
+      )}
       {...props}
     >
       <Typography variant="chat-text">
@@ -169,7 +175,10 @@ function UserAnswerBubble({ className, ...props }: HTMLProps<HTMLDivElement>) {
 function FirstResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>) {
   return (
     <div
-      className={cn(className, "rounded-3xl p-6 bg-gray-300 max-w-[532px] divide-y divide-divider")}
+      className={cn(
+        className,
+        "rounded-3xl p-6 bg-gray-300 max-w-[532px] divide-y divide-divider animate-fade-in",
+      )}
       {...props}
     >
       <Typography
@@ -198,7 +207,10 @@ function FirstResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>)
 function SecondResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>) {
   return (
     <div
-      className={cn("flex flex-col p-6 bg-gray-300 max-w-[532px] rounded-3xl gap-2", className)}
+      className={cn(
+        "flex flex-col p-6 bg-gray-300 max-w-[532px] rounded-3xl gap-2 animate-fade-in",
+        className,
+      )}
       {...props}
     >
       <Typography variant="chat-text" className="leading-[175%] text-gray-900">
@@ -225,7 +237,7 @@ function UserInteraction({
   return (
     <>
       <QuestionBubble
-        className="self-end chat-message"
+        className="self-end"
         onAnimationEnd={() => {
           onQuestionAnimationEnd();
           setTimeout(() => {
@@ -236,12 +248,9 @@ function UserInteraction({
         {children}
       </QuestionBubble>
       {showAnswer ? (
-        <UserAnswerBubble
-          className="self-start chat-message"
-          onAnimationEnd={onAnswerAnimationEnd}
-        />
+        <UserAnswerBubble className="self-start" onAnimationEnd={onAnswerAnimationEnd} />
       ) : (
-        <div className="flex self-start gap-2 p-4 bg-gray-300 chat-message rounded-3xl">
+        <div className="flex self-start gap-2 p-4 bg-gray-300 rounded-3xl">
           <span className="w-2 h-2 bg-gray-700 rounded-full animate-pulse" />
           <span className="w-2 h-2 delay-150 bg-gray-700 rounded-full animate-pulse" />
           <span className="w-2 h-2 delay-300 bg-gray-700 rounded-full animate-pulse" />
@@ -298,32 +307,20 @@ function Chat() {
           className="flex flex-col items-end h-[calc(100vh-210px)] gap-4 overflow-y-auto scroll-smooth pt-16"
           ref={chatContainerRef}
         >
-          <QuestionBubble
-            className="self-end chat-message"
-            onAnimationIteration={() => scrollToBottom()}
-          >
+          <QuestionBubble className="self-end" onAnimationIteration={() => scrollToBottom()}>
             We want to buy and own real estate around the world together. How do we coordinate and
             finance it?
           </QuestionBubble>
           {messagesCount > 0 && (
-            <FirstResponseBubble
-              onAnimationEnd={() => scrollToBottom()}
-              className="self-start chat-message"
-            />
+            <FirstResponseBubble onAnimationEnd={() => scrollToBottom()} className="self-start" />
           )}
           {messagesCount > 1 && (
-            <QuestionBubble
-              className="self-end chat-message"
-              onAnimationEnd={() => scrollToBottom()}
-            >
+            <QuestionBubble className="self-end" onAnimationEnd={() => scrollToBottom()}>
               Are there examples of DAOs that have done this in the past?
             </QuestionBubble>
           )}
           {messagesCount > 2 && (
-            <SecondResponseBubble
-              onAnimationEnd={() => scrollToBottom()}
-              className="self-start chat-message"
-            />
+            <SecondResponseBubble onAnimationEnd={() => scrollToBottom()} className="self-start" />
           )}
           {userMessages.map((message, index) => (
             <UserInteraction
