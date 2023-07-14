@@ -263,6 +263,8 @@ function UserInteraction({
 const DEFAULT_MESSAGES_COUNT = 4;
 
 function Chat() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const [messagesCount, setMessagesCount] = useState(0);
   const [isIntervalActive, setIntervalActive] = useState(true);
   const chatContainerRef = useRef<null | HTMLDivElement>(null);
@@ -292,6 +294,9 @@ function Chat() {
     if (isIntervalActive && messagesCount < DEFAULT_MESSAGES_COUNT) {
       interval = setInterval(() => {
         setMessagesCount((count) => count + 1);
+        if (messagesCount > 2 && inputRef.current) {
+          inputRef.current.focus();
+        }
       }, 2000);
     } else {
       setIntervalActive(false);
@@ -347,6 +352,7 @@ function Chat() {
           placeholder="Describe your challenge, get solutions."
           className="pr-[62px]"
           autoComplete="off"
+          ref={inputRef}
         />
         <AirplaneIcon
           className={clsx("absolute -translate-y-1/2 top-1/2 right-6", message && "bg-gray-900")}
