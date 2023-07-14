@@ -31,12 +31,6 @@ export default function SupporterDialog() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      twitter: "",
-      // involvement: "",
-    },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
