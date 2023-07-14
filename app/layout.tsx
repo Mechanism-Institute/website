@@ -4,6 +4,7 @@ import { MechanismCategory } from "@/types/mechanism-category";
 import Providers from "@/components/providers";
 import { cn } from "@/utils/shadui";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 // this is needed because otherwise the tailwind JIT compiler will not be able to find the dynamic classes
 // the type is to ensure every category is covered
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Navbar />
           <main className="flex flex-col flex-1 pb-16">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>

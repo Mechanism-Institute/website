@@ -150,13 +150,13 @@ function UserAnswerBubble({ className, ...props }: HTMLProps<HTMLDivElement>) {
     >
       <Typography variant="chat-text">
         Sorry, I&apos;m not actually real yet, but I will be soon! In the meantime, check out our{" "}
-        <Link className="text-orange underline font-bold" href="/library">
+        <Link className="font-bold underline text-orange" href="/library">
           library
         </Link>{" "}
         and learn how you can{" "}
         <span
           onClick={() => setSupportDialogOpen(true)}
-          className="text-orange underline font-bold cursor-pointer"
+          className="font-bold underline cursor-pointer text-orange"
         >
           get involved
         </span>
@@ -240,10 +240,10 @@ function UserInteraction({
           onAnimationEnd={onAnswerAnimationEnd}
         />
       ) : (
-        <div className="self-start chat-message p-4 flex gap-2 bg-gray-300 rounded-3xl">
-          <span className="w-2 h-2 animate-pulse rounded-full bg-gray-700" />
-          <span className="w-2 h-2  animate-pulse rounded-full bg-gray-700 delay-150" />
-          <span className="w-2 h-2  animate-pulse rounded-full bg-gray-700 delay-300" />
+        <div className="flex self-start gap-2 p-4 bg-gray-300 chat-message rounded-3xl">
+          <span className="w-2 h-2 bg-gray-700 rounded-full animate-pulse" />
+          <span className="w-2 h-2 delay-150 bg-gray-700 rounded-full animate-pulse" />
+          <span className="w-2 h-2 delay-300 bg-gray-700 rounded-full animate-pulse" />
         </div>
       )}
     </>
@@ -386,6 +386,14 @@ function DynamicPlaceholder({ onClick }: { onClick: () => void }) {
 
 export default function FakeChat({ className }: DisplayChatProps) {
   const [displayChat, setDisplayChat] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!displayChat) {
+        setDisplayChat(true);
+      }
+    }, 8000);
+  }, []);
 
   if (!displayChat) {
     return (
