@@ -19,6 +19,7 @@ import clsx from "clsx";
 import { Input } from "@/components/ui/input";
 import { useAtom } from "jotai";
 import { supporterDialogAtom } from "@/state/supporter-atom";
+import { storeUserInput } from "@/lib/store-user-input";
 
 interface DisplayChatProps {
   className?: string;
@@ -271,6 +272,7 @@ function Chat() {
     if (messagesCount < DEFAULT_MESSAGES_COUNT) return;
     if (blockInput) return;
     setBlockInput(true);
+    storeUserInput(message);
     setUserMessages((messages) => [...messages, message]);
     setMessage("");
   };

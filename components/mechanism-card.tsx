@@ -4,7 +4,6 @@ import CategoryTag from "@/components/ui/category-tag";
 import Link from "next/link";
 
 export default function MechanismCard({ mechanism }: { mechanism: Mechanism }) {
-  console.log(mechanism.alternativeNames);
   return (
     <Link href={`/mechanism/${mechanism.id}`}>
       <div className="flex flex-col h-full gap-6 p-6 transition duration-300 cursor-pointer bg-gray-50 hover:bg-white rounded-2xl hover:shadow-medium">
@@ -14,15 +13,6 @@ export default function MechanismCard({ mechanism }: { mechanism: Mechanism }) {
               <Typography className="text-xl font-medium leading-6 font-gotham">
                 {mechanism.name}
               </Typography>
-              {mechanism.alternativeNames.map((alternativeName, i) => (
-                <Typography
-                  className="font-gotham"
-                  variant="secondary"
-                  key={`${alternativeName}_${i}`}
-                >
-                  {"//"} {alternativeName}
-                </Typography>
-              ))}
             </div>
             <Typography className="leading-[150%] text-sm line-clamp-6 text-gray-700 font-light">
               {mechanism.description}
