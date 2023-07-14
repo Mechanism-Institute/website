@@ -30,7 +30,7 @@ test("createFilterFormula with searchTerm returns a formula with all categories 
     .map((type) => `FIND('${type}',{Type})`)
     .join(
       ",",
-    )}), OR(FIND('${searchTerm}',LOWER({Name})),FIND('${searchTerm}',LOWER({Type})),FIND('${searchTerm}',LOWER({Description})),FIND('${searchTerm}',LOWER({AlternativeNames}))))`;
+    )}), OR(FIND('${searchTerm}',LOWER({Name})),FIND('${searchTerm}',LOWER({Type})),FIND('${searchTerm}',LOWER({Description})),FIND('${searchTerm}',LOWER({AlternativeNames})),FIND('${searchTerm}',LOWER({Implementations}))))`;
   expect(formula).toBe(expectedFormula);
 });
 
@@ -42,7 +42,7 @@ test("createFilterFormula with categories and searchTerm returns a formula with 
     .map((category) => `FIND('${CAPITALIZED_CATEGORIES[category]}',{Type})`)
     .join(
       ",",
-    )}), OR(FIND('${searchTerm}',LOWER({Name})),FIND('${searchTerm}',LOWER({Type})),FIND('${searchTerm}',LOWER({Description})),FIND('${searchTerm}',LOWER({AlternativeNames}))))`;
+    )}), OR(FIND('${searchTerm}',LOWER({Name})),FIND('${searchTerm}',LOWER({Type})),FIND('${searchTerm}',LOWER({Description})),FIND('${searchTerm}',LOWER({AlternativeNames})),FIND('${searchTerm}',LOWER({Implementations}))))`;
   expect(formula).toBe(expectedFormula);
 });
 

@@ -20,7 +20,7 @@ export function createMechanismsSearchFilterFormula({
 
   if (searchTerm) {
     const upperSearchTerm = searchTerm.toLowerCase();
-    const searchFilters = ["Name", "Type", "Description", "AlternativeNames"]
+    const searchFilters = ["Name", "Type", "Description", "AlternativeNames", "Implementations"]
       .map((fieldName) => `FIND('${upperSearchTerm}',LOWER({${fieldName}}))`)
       .join(",");
 
