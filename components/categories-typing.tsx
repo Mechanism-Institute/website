@@ -18,8 +18,6 @@ export default function CategoriesTyping() {
         2000,
         "security",
         2000,
-        "anything",
-        2000,
       ]}
       wrapper="span"
       speed={{ type: "keyStrokeDelayInMs", value: 100 }}

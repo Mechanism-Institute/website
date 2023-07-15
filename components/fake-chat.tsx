@@ -224,6 +224,16 @@ function SecondResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>
   );
 }
 
+function BubbleLoading() {
+  return (
+    <div className="flex self-start gap-2 p-4 bg-gray-300 rounded-3xl">
+      <span className="w-2 h-2 bg-gray-700 rounded-full animate-pulse" />
+      <span className="w-2 h-2 delay-150 bg-gray-700 rounded-full animate-pulse" />
+      <span className="w-2 h-2 delay-300 bg-gray-700 rounded-full animate-pulse" />
+    </div>
+  );
+}
+
 function UserInteraction({
   children,
   onQuestionAnimationEnd,
@@ -250,11 +260,7 @@ function UserInteraction({
       {showAnswer ? (
         <UserAnswerBubble className="self-start" onAnimationEnd={onAnswerAnimationEnd} />
       ) : (
-        <div className="flex self-start gap-2 p-4 bg-gray-300 rounded-3xl">
-          <span className="w-2 h-2 bg-gray-700 rounded-full animate-pulse" />
-          <span className="w-2 h-2 delay-150 bg-gray-700 rounded-full animate-pulse" />
-          <span className="w-2 h-2 delay-300 bg-gray-700 rounded-full animate-pulse" />
-        </div>
+        <BubbleLoading />
       )}
     </>
   );
@@ -364,14 +370,15 @@ function Chat() {
 
 function AirplaneIcon({ className }: { className?: string }) {
   return (
-    <div
+    <button
+      type="submit"
       className={clsx(
         "flex items-center justify-center w-[30px] h-[30px] bg-gray-400 rounded-full group-hover:bg-gray-900 transition-color duration-300",
         className,
       )}
     >
       <Image src="/paper-plane.svg" alt="paper-plane" width={14} height={14} />
-    </div>
+    </button>
   );
 }
 
