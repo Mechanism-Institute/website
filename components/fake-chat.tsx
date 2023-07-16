@@ -360,9 +360,11 @@ function Chat() {
           autoComplete="off"
           ref={inputRef}
         />
-        <AirplaneIcon
-          className={clsx("absolute -translate-y-1/2 top-1/2 right-6", message && "bg-gray-900")}
-        />
+        <button disabled={!message || blockInput}>
+          <AirplaneIcon
+            className={clsx("absolute -translate-y-1/2 top-1/2 right-6", message && "bg-gray-900")}
+          />
+        </button>
       </form>
     </>
   );
