@@ -80,7 +80,7 @@ function Organization({
         </div>
       </div>
       {description && (
-        <Typography className="text-stone text-[12px] leading-[175%] pt-4 border-t border-gray-200 font-semilight">
+        <Typography className="text-stone text-[12px] leading-[150%] pt-4 border-t border-gray-200 font-semilight">
           {description}
         </Typography>
       )}
@@ -103,7 +103,7 @@ function BondingCurveToken({ value }: { value: string }) {
       </AccordionTrigger>
       <AccordionContent className="pt-0 border-t-0">
         <div>
-          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider">
+          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider text-[12px]">
             A token whose price is determined by a mathematical curve based on supply and demand.
             The price increases as more tokens are purchased and decreases as more tokens are sold.
           </Typography>
@@ -128,7 +128,7 @@ function PaymentSplitter({ value }: { value: string }) {
       </AccordionTrigger>
       <AccordionContent className="pt-0 border-t-0">
         <div>
-          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider">
+          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider text-[12px]">
             Divides incoming payments among multiple recipients according to hardcoded or dynamic
             ownership percentages.
           </Typography>
@@ -151,7 +151,7 @@ function ConvictionVoting({ value }: { value: string }) {
       </AccordionTrigger>
       <AccordionContent className="pt-0 border-t-0">
         <div>
-          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider">
+          <Typography className="text-gray-700 font-normal leading-[150%] pt-4 border-t border-divider text-[12px]">
             Proposals are passed based on aggregated continuous preferences of community members.
           </Typography>
         </div>
