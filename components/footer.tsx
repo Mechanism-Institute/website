@@ -1,23 +1,33 @@
 import Image from "next/image";
+import Mail from "./ui/mail";
+import Twitter from "./ui/twitter";
 import Link from "next/link";
 import Typography from "./ui/typography";
 
 export default function Footer() {
-  const date = new Date().getFullYear();
   return (
     <footer className="relative py-6 border-t border-gray-300">
-      <div className="flex items-center justify-end">
-        {/* <Link href="/" className="transition-opacity duration-300 cursor-pointer hover:opacity-70">
-          <Image src="/logo.svg" alt="logo" width={160} height={26} className="opacity-50" />
-        </Link> */}
-        <div className="flex items-center gap-8">
-          <Link href="mailto:hello@mechanism.institute">
-            <Typography className="text-xs text-gray-700 underline transition-opacity duration-300 cursor-pointer hover:opacity-70">
-              hello@mechanism.institute
-            </Typography>
-          </Link>
-          <Typography className="text-xs text-gray-500">Mechanism Institute © {date}</Typography>
-        </div>
+      <div className="flex items-center justify-between">
+        <Link
+          className="flex items-center gap-2 text-gray-500 duration-300 cursor-pointer group hover:text-gray-700"
+          href="mailto:hello@mechanism.institute"
+        >
+          <Mail width={20} height={20} />
+          <Typography className="text-xs text-gray-500 underline transition-colors duration-300 group-hover:text-gray-700">
+            hello@mechanism.institute
+          </Typography>
+        </Link>
+        <Link
+          href="https://twitter.com/mechanism_inst"
+          target="_blank"
+          rel="noredirect"
+          className="flex items-center gap-2 text-gray-500 duration-300 cursor-pointer group hover:text-gray-700"
+        >
+          <Twitter width={20} height={20} />
+          <Typography className="text-xs text-gray-500 underline transition-colors duration-300 group-hover:text-gray-700">
+            mechanism_inst
+          </Typography>
+        </Link>
       </div>
     </footer>
   );
