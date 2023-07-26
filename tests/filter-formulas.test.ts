@@ -3,12 +3,12 @@ import {
   createImplementationsIdsFilterFormula,
   createMechanismsSearchFilterFormula,
 } from "@/utils/filter-formulas";
-import { CAPITALIZED_CATEGORIES } from "@/config/categories";
+import { CATEGORY_LABELS } from "@/config/categories";
 import { MechanismCategory } from "@/types/mechanism-category";
 
 test("createFilterFormula with no params returns a formula with all categories", () => {
   const formula = createMechanismsSearchFilterFormula({});
-  const expectedFormula = `OR(${Object.values(CAPITALIZED_CATEGORIES)
+  const expectedFormula = `OR(${Object.values(CATEGORY_LABELS)
     .map((type) => `FIND('${type}',{Type})`)
     .join(",")})`;
   expect(formula).toBe(expectedFormula);
@@ -18,7 +18,7 @@ test("createFilterFormula with categories returns a formula with those categorie
   const categories: MechanismCategory[] = ["value-capture", "economic-design"];
   const formula = createMechanismsSearchFilterFormula({ categories });
   const expectedFormula = `OR(${categories
-    .map((category) => `FIND('${CAPITALIZED_CATEGORIES[category]}',{Type})`)
+    .map((category) => `FIND('${CATEGORY_LABELS[category]}',{Type})`)
     .join(",")})`;
   expect(formula).toBe(expectedFormula);
 });
@@ -26,7 +26,7 @@ test("createFilterFormula with categories returns a formula with those categorie
 test("createFilterFormula with searchTerm returns a formula with all categories and search term", () => {
   const searchTerm = "Some Term".toLowerCase();
   const formula = createMechanismsSearchFilterFormula({ searchTerm });
-  const expectedFormula = `AND(OR(${Object.values(CAPITALIZED_CATEGORIES)
+  const expectedFormula = `AND(OR(${Object.values(CATEGORY_LABELS)
     .map((type) => `FIND('${type}',{Type})`)
     .join(
       ",",
@@ -39,7 +39,7 @@ test("createFilterFormula with categories and searchTerm returns a formula with 
   const searchTerm = "Some Term".toLowerCase();
   const formula = createMechanismsSearchFilterFormula({ categories, searchTerm });
   const expectedFormula = `AND(OR(${categories
-    .map((category) => `FIND('${CAPITALIZED_CATEGORIES[category]}',{Type})`)
+    .map((category) => `FIND('${CATEGORY_LABELS[category]}',{Type})`)
     .join(
       ",",
     )}), OR(FIND('${searchTerm}',LOWER({Name})),FIND('${searchTerm}',LOWER({Type})),FIND('${searchTerm}',LOWER({Description})),FIND('${searchTerm}',LOWER({AlternativeNames})),FIND('${searchTerm}',LOWER({Implementations}))))`;
