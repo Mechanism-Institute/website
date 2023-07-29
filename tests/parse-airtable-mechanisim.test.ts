@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { parseAirtableMechanism } from "@/utils/parse-airtable-mechanism";
 import { AirtableMechanism } from "@/types/airtable-mechanism";
-import { CAPITALIZED_CATEGORIES } from "@/config/categories";
+import { CATEGORY_LABELS } from "@/config/categories";
 import sinon from "sinon";
 
 test("parseAirtableMechanism", () => {
@@ -11,7 +11,7 @@ test("parseAirtableMechanism", () => {
     fields: {
       Name: "Test Mechanism",
       Description: "This is a test mechanisms",
-      Type: [CAPITALIZED_CATEGORIES["value-allocation"]],
+      Type: [CATEGORY_LABELS["value-allocation"]],
       Approved: true,
       Upvotes: 0,
       Implementations: [""],
@@ -47,10 +47,10 @@ test("parseAirtableMechanism with secondary categories", () => {
       Name: "Test Mechanism",
       Description: "This is a test mechanisms",
       Type: [
-        CAPITALIZED_CATEGORIES["value-allocation"],
-        CAPITALIZED_CATEGORIES["value-capture"],
-        CAPITALIZED_CATEGORIES["fundraising"],
-        CAPITALIZED_CATEGORIES["governance"],
+        CATEGORY_LABELS["value-allocation"],
+        CATEGORY_LABELS["value-capture"],
+        CATEGORY_LABELS["fundraising"],
+        CATEGORY_LABELS["governance"],
       ],
       Approved: true,
       Upvotes: 0,

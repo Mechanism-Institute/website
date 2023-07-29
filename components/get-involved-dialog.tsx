@@ -11,23 +11,29 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useState } from "react";
 import { useMutation } from "react-query";
+import Select from "react-select";
 import { storeGetInvolvedSubmit } from "@/lib/store-user-input";
 
 const formSchema = z.object({
   name: z.string().nonempty(),
   email: z.string().email(),
   twitter: z.string().optional(),
-  involvement: z.string().nonempty(),
+  involvement: z.array(z.string().nonempty()),
 });
+
+const options = [
+  "Working with an MI expert",
+  "Partnering as an organization",
+  "Become an MI researcher",
+  "Contribute to the Library",
+  "Competitions & events",
+  "Newsletter & reports",
+].map((option) => ({
+  value: option,
+  label: option,
+}));
 
 export default function SupporterDialog() {
   const [submitted, setSubmitted] = useState(false);
@@ -39,7 +45,7 @@ export default function SupporterDialog() {
 
   const { mutate, isLoading } = useMutation<void, Error, z.infer<typeof formSchema>>({
     mutationFn: async (values) => {
-      await storeGetInvolvedSubmit(values);
+      await storeGetInvolvedSubmit({ ...values });
     },
     onSuccess: () => {
       setSubmitted(true);
@@ -146,32 +152,30 @@ export default function SupporterDialog() {
                       <FormLabel>
                         How would you like to get involved?<span className="text-orange">*</span>
                       </FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select One" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="Working with an MI expert">
-                            Working with an MI expert
-                          </SelectItem>
-                          <SelectItem value="Partnering as an organization">
-                            Partnering as an organization
-                          </SelectItem>
-                          <SelectItem value="Become an MI researcher">
-                            Become an MI researcher
-                          </SelectItem>
-                          <SelectItem value="Contribute to the Library">
-                            Contribute to the Library
-                          </SelectItem>
-                          <SelectItem value="Join the MI team">Join the MI team</SelectItem>
-                          <SelectItem value="Competitions & events">
-                            Competitions & events
-                          </SelectItem>
-                          <SelectItem value="Newsletter & reports">Newsletter & reports</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <Select
+                        closeMenuOnSelect={false}
+                        required
+                        value={field.value?.map((value) => ({
+                          value,
+                          label: value,
+                        }))}
+                        onChange={(newValue) => {
+                          const values = newValue.map((value) => value.value);
+                          form.setValue("involvement", values);
+                        }}
+                        classNames={{
+                          control: () =>
+                            "!rounded-2xl py-4 px-6 !border !border-gray-400 !bg-gray-50",
+                          valueContainer: () => "!p-0 !m-0",
+                          input: () => "!m-0 !p-0",
+                          indicatorSeparator: () => "!w-0",
+                          placeholder: () => "!mx-0 !text-gray-400",
+                          dropdownIndicator: () => "!p-0",
+                        }}
+                        isMulti
+                        name="involvement"
+                        options={options}
+                      ></Select>
                     </FormItem>
                   )}
                 />

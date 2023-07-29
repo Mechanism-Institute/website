@@ -1,5 +1,5 @@
 import { MechanismCategory } from "@/types/mechanism-category";
-import { CAPITALIZED_CATEGORIES } from "@/config/categories";
+import { CATEGORY_LABELS } from "@/config/categories";
 
 export function createMechanismsSearchFilterFormula({
   categories,
@@ -11,9 +11,9 @@ export function createMechanismsSearchFilterFormula({
   let searchCategories: string[];
 
   if (categories && categories.length > 0) {
-    searchCategories = categories.map((category) => CAPITALIZED_CATEGORIES[category]);
+    searchCategories = categories.map((category) => CATEGORY_LABELS[category]);
   } else {
-    searchCategories = Object.values(CAPITALIZED_CATEGORIES);
+    searchCategories = Object.values(CATEGORY_LABELS);
   }
 
   const categoryFilters = searchCategories.map((type) => `FIND('${type}',{Type})`).join(",");

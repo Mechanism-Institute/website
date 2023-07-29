@@ -1,10 +1,10 @@
 import { MechanismCategory } from "@/types/mechanism-category";
-import { CAPITALIZED_CATEGORIES } from "@/config/categories";
+import { CATEGORY_LABELS } from "@/config/categories";
 import { AirtableMechanism } from "@/types/airtable-mechanism";
 import { Mechanism } from "@/types/mechanism";
 
 const flippedCapitalizedCategories = Object.fromEntries(
-  Object.entries(CAPITALIZED_CATEGORIES).map(([key, value]) => [value, key as MechanismCategory]),
+  Object.entries(CATEGORY_LABELS).map(([key, value]) => [value, key as MechanismCategory]),
 );
 
 function parseCategory(category: string): MechanismCategory {
@@ -16,7 +16,7 @@ function sanitizeCategory(category: string) {
 }
 
 function isValidCategory(category: string): category is MechanismCategory {
-  return Object.values(CAPITALIZED_CATEGORIES).includes(sanitizeCategory(category));
+  return Object.values(CATEGORY_LABELS).includes(sanitizeCategory(category));
 }
 
 export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Mechanism | null {

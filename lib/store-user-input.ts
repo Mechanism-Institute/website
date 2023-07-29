@@ -19,7 +19,7 @@ export async function storeLibrarySearch(input: string) {
 export async function storeGetInvolvedSubmit(info: {
   name: string;
   email: string;
-  involvement: string;
+  involvement: string[];
   twitter?: string;
 }) {
   return fetch("/api/get-involved-input", {
