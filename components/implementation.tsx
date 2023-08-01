@@ -64,11 +64,13 @@ export default function Implementation({ implementation }: { implementation: Imp
           )}
         </div>
       </div>
-      <Separator />
       {implementation.description && (
-        <Typography className="text-stone text-[16px] leading-[175%] font-semilight prose">
-          <ReactMarkdown>{implementation.description}</ReactMarkdown>
-        </Typography>
+        <>
+          <Separator />
+          <Typography className="text-stone text-[16px] leading-[175%] font-semilight prose">
+            <ReactMarkdown>{implementation.description}</ReactMarkdown>
+          </Typography>
+        </>
       )}
     </div>
   );
