@@ -23,6 +23,10 @@ export interface CategoryProps extends React.HTMLAttributes<HTMLSpanElement>, Ca
 
 const CategoryTag = React.forwardRef<HTMLSpanElement, CategoryProps>(
   ({ className, variant, children, ...props }, ref) => {
+    if (!CATEGORY_LABELS[variant]) {
+      return null;
+    }
+
     return (
       <span className={categoryVariants({ variant, className })} ref={ref} {...props}>
         {CATEGORY_LABELS[variant]}
