@@ -67,9 +67,9 @@ export default function Implementation({ implementation }: { implementation: Imp
       {implementation.description && (
         <>
           <Separator />
-          <Typography className="text-stone text-[16px] leading-[175%] font-semilight prose">
-            <ReactMarkdown>{implementation.description}</ReactMarkdown>
-          </Typography>
+          <ReactMarkdown className="text-stone text-[16px] leading-[175%] font-semilight prose word-break-break-word">
+            {implementation.description}
+          </ReactMarkdown>
         </>
       )}
     </div>

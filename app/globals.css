@@ -98,6 +98,10 @@
   border-radius: 16px;
 }
 
+.word-break-break-word {
+  word-break: break-word;
+}
+
 @keyframes bubble {
   0% {
     opacity: 0;
