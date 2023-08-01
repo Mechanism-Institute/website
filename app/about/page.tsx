@@ -24,13 +24,10 @@ export default function Page() {
         <div className="flex flex-col max-w-[720px] gap-12">
           <div className="flex flex-col gap-6">
             <Typography variant="title2" className="text-stone font-gotham">
-              What?
+              Enhancing coordination with mechanism design
             </Typography>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Enhancing coordination with mechanism design
-                </Typography>
                 <Typography variant="body" className="leading-[175%]">
                   We are an independent think tank, membership organization and publisher advancing
                   the industry through open resources, applied research and solution design for

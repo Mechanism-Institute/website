@@ -11,13 +11,11 @@ import Footer from "@/components/footer";
 // the type is to ensure every category is covered
 const backgroundVariants: Record<MechanismCategory, string> = {
   "value-capture": "bg-orange",
-  budgeting: "bg-teal",
-  liquidity: "bg-blue",
-  "economic-design": "bg-purple",
-  "value-allocation": "bg-yellow",
+  "market": "bg-purple",
+  "value-transfer": "bg-yellow",
   fundraising: "bg-green",
   governance: "bg-brown",
-  identity: "bg-pink",
+  signalling: "bg-pink",
 };
 
 export const metadata: Metadata = {

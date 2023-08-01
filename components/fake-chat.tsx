@@ -123,7 +123,7 @@ function PaymentSplitter({ value }: { value: string }) {
               Payment Splitter
             </Typography>
           </div>
-          <CategoryTag variant="value-allocation" className="mr-4" />
+          <CategoryTag variant="value-transfer" className="mr-4" />
         </div>
       </AccordionTrigger>
       <AccordionContent className="pt-0 border-t-0">
@@ -214,7 +214,7 @@ function FirstResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>)
         className="flex items-baseline gap-x-1 gap-y-[3px] self-stretch flex-wrap pb-4"
       >
         Your solution requires <CategoryTag variant="fundraising" />,
-        <CategoryTag variant="value-allocation" />
+        <CategoryTag variant="value-transfer" />
         and <CategoryTag variant="governance" />
       </Typography>
       <div className="flex flex-col gap-2">

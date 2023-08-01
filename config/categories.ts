@@ -1,34 +1,28 @@
 import { MechanismCategory } from "@/types/mechanism-category";
 
 export const CATEGORIES = [
-  "value-allocation",
+  "value-transfer",
   "fundraising",
-  "identity",
+  "signalling",
   "governance",
-  "economic-design",
-  "liquidity",
-  "budgeting",
+  "market",
   "value-capture",
 ] as const;
 
 export const CATEGORY_LABELS: Record<MechanismCategory, string> = {
   "value-capture": "Value Capture",
-  budgeting: "Budgeting",
-  liquidity: "Liquidity",
-  "economic-design": "Economic Design",
-  "value-allocation": "Value Allocation",
+  "market": "Market",
+  "value-transfer": "Value Transfer",
   fundraising: "Fundraising",
   governance: "Governance",
-  identity: "Identity",
+  signalling: "Signalling",
 };
 
 export const CATEGORIES_BACKGROUNDS: Record<MechanismCategory, string> = {
   "value-capture": "bg-orange",
-  budgeting: "bg-teal",
-  liquidity: "bg-blue",
-  "economic-design": "bg-purple",
-  "value-allocation": "bg-yellow",
+  "market": "bg-purple",
+  "value-transfer": "bg-yellow",
   fundraising: "bg-green",
   governance: "bg-brown",
-  identity: "bg-pink",
+  signalling: "bg-pink",
 };
