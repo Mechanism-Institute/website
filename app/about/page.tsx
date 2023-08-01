@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Typography from "@/components/ui/typography";
-import Link from "next/link";
-import ArrowLeft from "@/components/ui/arrow-left";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -29,7 +27,9 @@ export default function Page() {
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Mechanism Institute brings together builders and researchers to unlock the positive-sum potential of mechanism design. We provide open resources and applied research that advance cryptoeconomic building blocks for digital-age institutions.
+                  Mechanism Institute brings together builders and researchers to unlock the
+                  positive-sum potential of mechanism design. We provide open resources and applied
+                  research that advance cryptoeconomic building blocks for digital-age institutions.
                 </Typography>
               </div>
             </div>
@@ -44,7 +44,9 @@ export default function Page() {
                   Research and Experimentation
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                 We conduct cross-disciplinary research, design competitions, and carefully crafted experiments to discover how different mechanisms can be employed to solve particular coordination problems.
+                  We conduct cross-disciplinary research, design competitions, and carefully crafted
+                  experiments to discover how different mechanisms can be employed to solve
+                  particular coordination problems.
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
@@ -52,7 +54,7 @@ export default function Page() {
                   The Library
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                 We're compiling a catalogue of mechanism design patterns so that anyone can easily navigate the full solution space and learn from detailed case studies.
+                  {`We're compiling a catalogue of mechanism design patterns so that anyone can easily navigate the full solution space and learn from detailed case studies.`}
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
@@ -60,7 +62,8 @@ export default function Page() {
                   Ecosystem Building
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  We facilitate knowledge sharing, collaboration, and innovation between partners in academia and industry that are committed to advancing mechanism design.
+                  We facilitate knowledge sharing, collaboration, and innovation between partners in
+                  academia and industry that are committed to advancing mechanism design.
                 </Typography>
               </div>
             </div>
