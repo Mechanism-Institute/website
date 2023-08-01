@@ -2,7 +2,6 @@ import { expect, test } from "vitest";
 import { parseAirtableMechanism } from "@/utils/parse-airtable-mechanism";
 import { AirtableMechanism } from "@/types/airtable-mechanism";
 import { CATEGORY_LABELS } from "@/config/categories";
-import sinon from "sinon";
 
 test("parseAirtableMechanism", () => {
   const airtableMechanism: AirtableMechanism = {
@@ -76,30 +75,4 @@ test("parseAirtableMechanism with secondary categories", () => {
   } else {
     throw new Error("mapMechanism returned null");
   }
-});
-
-test("parseAirtableMechanism with invalid category", () => {
-  const airtableMechanism: AirtableMechanism = {
-    id: "1",
-    createdTime: "2023-07-09T00:00:00.000Z",
-    fields: {
-      Name: "Test Mechanism",
-      Description: "This is a test mechanisms",
-      Type: ["Invalid Category"],
-      Approved: true,
-      Upvotes: 0,
-      Implementations: [""],
-      AlternativeNames: "",
-      Discussion: "Discussion",
-      Resources: "",
-    },
-  };
-
-  const consoleSpy = sinon.stub(console, "error");
-  const result = parseAirtableMechanism(airtableMechanism);
-
-  expect(result).toBeNull();
-  expect(consoleSpy.calledOnce).toBe(true);
-
-  consoleSpy.restore();
 });

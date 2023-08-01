@@ -8,8 +8,6 @@ import Github from "@/components/ui/github";
 import ReactMarkdown from "react-markdown";
 import { Separator } from "@/components/ui/separator";
 
-const formatUrl = (url: string) => url.replace(/(^\w+:|^)\/\//, "").replace(/\/$/, "");
-
 export default function Implementation({ implementation }: { implementation: Implementation }) {
   return (
     <div className="flex flex-col gap-4 p-4 bg-white rounded-2xl">

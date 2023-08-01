@@ -15,45 +15,29 @@ function sanitizeCategory(category: string) {
   return category.replace(/[^a-z0-9\s]/gi, "").trim();
 }
 
-function isValidCategory(category: string): category is MechanismCategory {
-  return Object.values(CATEGORY_LABELS).includes(sanitizeCategory(category));
-}
+export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Mechanism {
+  let category: string;
+  let secondaryCategories: string[] | undefined;
 
-export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Mechanism | null {
-  try {
-    let category: string;
-    let secondaryCategories: string[] | undefined;
-
-    if (airtableMechanism.fields.Type.length > 0) {
-      category = sanitizeCategory(airtableMechanism.fields.Type[0]);
-      if (airtableMechanism.fields.Type.length > 1) {
-        secondaryCategories = airtableMechanism.fields.Type.slice(1).map(sanitizeCategory);
-      }
-    } else {
-      category = airtableMechanism.fields.Type[0] as MechanismCategory;
+  if (airtableMechanism.fields.Type.length > 0) {
+    category = sanitizeCategory(airtableMechanism.fields.Type[0]);
+    if (airtableMechanism.fields.Type.length > 1) {
+      secondaryCategories = airtableMechanism.fields.Type.slice(1).map(sanitizeCategory);
     }
-
-    if (!isValidCategory(category)) {
-      throw new Error(`Invalid category: ${category}`);
-    }
-
-    return {
-      id: airtableMechanism.id,
-      createdTime: airtableMechanism.createdTime,
-      name: airtableMechanism.fields.Name,
-      // TODO: This filter should be removed once the API returns an array
-      alternativeNames: [airtableMechanism.fields.AlternativeNames].filter(Boolean),
-      description: airtableMechanism.fields.Description,
-      category: parseCategory(category),
-      secondaryCategories: secondaryCategories?.map(parseCategory),
-      discussion: airtableMechanism.fields.Discussion,
-      implementations: airtableMechanism.fields.Implementations ?? [],
-      resources: airtableMechanism.fields.Resources,
-    };
-  } catch (error) {
-    console.error(
-      `Failed to map mechanism: ${JSON.stringify(airtableMechanism, null, 2)} - ${error}`,
-    );
-    return null;
+  } else {
+    category = airtableMechanism.fields.Type[0] as MechanismCategory;
   }
+
+  return {
+    id: airtableMechanism.id,
+    createdTime: airtableMechanism.createdTime,
+    name: airtableMechanism.fields.Name,
+    alternativeNames: [airtableMechanism.fields.AlternativeNames].filter(Boolean),
+    description: airtableMechanism.fields.Description,
+    category: parseCategory(category),
+    secondaryCategories: secondaryCategories?.map(parseCategory),
+    discussion: airtableMechanism.fields.Discussion,
+    implementations: airtableMechanism.fields.Implementations ?? [],
+    resources: airtableMechanism.fields.Resources,
+  };
 }
