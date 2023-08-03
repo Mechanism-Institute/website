@@ -21,7 +21,7 @@ const backgroundVariants: Record<MechanismCategory, string> = {
 export const metadata: Metadata = {
   title: "Mechanism Institute",
   description:
-    "An independent think tank, membership organization and publisher advancing the industry through open resources, applied research and solution design for digital-age institutions solving real-world problems.",
+    "Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and apply mechanisms to solve coordination problems.",
   icons: ["/favicon.svg"],
 };
 

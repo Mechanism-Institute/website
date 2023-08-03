@@ -248,12 +248,12 @@ function SecondResponseBubble({ className, ...props }: HTMLProps<HTMLDivElement>
           name="AaveGotchi"
           app="https://app.aavegotchi.com/curve"
           sourcecode="https://wiki.aavegotchi.com/en/tokenomics"
-          description="GHST is sold for DAI on a bonding curve that is gated to users who have been approved through a centralized KYC process. GHST is a currency token that users can spend on portals and wearables. Spent GHST is split between users via rarity farming, the developer team, the community DAO, and a portion is burned which increases the bonding curve price all things equal."
+          description="GHST is sold for DAI on a bonding curve that is gated to users who have been approved through a centralized KYC process. GHST is a currency token that users can spend on portals and wearables. Spent GHST is split between users via rarity farming, the developer team, the community DAO, and a portion is burned which increases the bonding curve price."
         />
         <Organization
           name="DeSo"
           app="https://www.deso.com/"
-          description="Each user has a personal bonding curve token that any user can buy tokens from. Users can share revenue with their token holders by selling goods and access to services that share revenue with the curve, thereby bringing the token redemption price all else equal."
+          description="Each user has a personal bonding curve token that any user can buy tokens from. Users can share revenue with their token holders by selling goods and access to services that share revenue with the curve, thereby increasing the token redemption price."
         />
       </Accordion>
     </div>

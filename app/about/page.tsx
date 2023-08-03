@@ -27,16 +27,21 @@ export default function Page() {
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Mechanism Institute brings together builders and researchers to unlock the
-                  positive-sum potential of mechanism design. We provide open resources and applied
-                  research that advance cryptoeconomic building blocks for digital-age institutions.
+                  Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and apply mechanisms to solve coordination problems.
+                </Typography>
+              </div>
+            </div>
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-2">
+                <Typography variant="body" className="leading-[175%]">
+                  We believe that traditional institutions are failing to meet the complex demands of the 21st century, and that blockchain-based mechanisms offer a powerful yet under-explored alternative. Our mission is to fundamentally upgrade how our societies function, paving the way for more efficient, resilient, and adaptive institutions that prioritize people and creative positive-sum outcomes.
                 </Typography>
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <Typography variant="body" className="leading-[175%]">
-              Our primary areas of focus are:
+              We achieve this through:
             </Typography>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
@@ -44,17 +49,15 @@ export default function Page() {
                   Research and Experimentation
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  We conduct cross-disciplinary research, design competitions, and carefully crafted
-                  experiments to discover how different mechanisms can be employed to solve
-                  particular coordination problems.
+                  We conduct cross-disciplinary research, targeted experiments, and design competitions to discover the best ways to employ various mechanisms to solve specific problems.
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
                 <Typography variant="subtitle2" className="text-stone font-gotham">
-                  The Library
+                  Design Space Mapping
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  {`We're compiling a catalogue of mechanism design patterns so that anyone can easily navigate the full solution space and learn from detailed case studies.`}
+                  {`Our growing catalog of mechanism design patterns allows anyone to explore the full range of solutions and learn from real-world case studies.`}
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
@@ -62,8 +65,7 @@ export default function Page() {
                   Ecosystem Building
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  We facilitate knowledge sharing, collaboration, and innovation between partners in
-                  academia and industry that are committed to advancing mechanism design.
+                  We facilitate knowledge sharing, collaboration, and innovation between partners in academia and industry that are committed to advancing mechanism design.
                 </Typography>
               </div>
             </div>
