@@ -34,7 +34,7 @@ export default function Page() {
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  We believe that traditional institutions are failing to meet the complex demands of the 21st century, and that blockchain-based mechanisms offer a powerful yet under-explored alternative. Our mission is to fundamentally upgrade how our societies function, paving the way for more efficient, resilient, and adaptive institutions that prioritize people and create positive-sum outcomes.
+                  We believe that traditional institutions are failing to meet the complex demands of the 21st century, and that blockchain-based mechanisms offer a powerful yet under-explored alternative. Our mission is to fundamentally upgrade how our societies function, paving the way for more efficient, resilient, and adaptive institutions that prioritize people and positive-sum outcomes.
                 </Typography>
               </div>
             </div>
