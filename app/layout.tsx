@@ -15,7 +15,7 @@ const backgroundVariants: Record<MechanismCategory, string> = {
   "value-transfer": "bg-yellow",
   fundraising: "bg-green",
   governance: "bg-brown",
-  signalling: "bg-pink",
+  signaling: "bg-pink",
 };
 
 export const metadata: Metadata = {
