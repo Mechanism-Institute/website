@@ -27,7 +27,7 @@ export default function Page() {
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and apply mechanisms to solve coordination problems.
+                  Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and deploy new coordination mechanisms.
                 </Typography>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function Page() {
                   Research and Experimentation
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  We conduct cross-disciplinary research, targeted experiments, and design competitions to discover the best ways to employ various mechanisms to solve specific problems.
+                  We orchestrate cross-disciplinary research, design competitions, and targeted experiments that show how to overcome particular coordination problems with different mechanisms.
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
