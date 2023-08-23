@@ -4,13 +4,16 @@ import { MECHANISMS_TABLE_ID } from "@/config/table-names";
 
 export async function getMechanism(slug: string) {
   const request = await fetch(
-    `https://api.airtable.com/v0/appocudTAOitQmuud/${MECHANISMS_TABLE_ID}`,
+    `https://api.airtable.com/v0/appocudTAOitQmuud/Mechanisms?filterByFormula=REGEX_REPLACE(SUBSTITUTE(LOWER(%7BName%7D)%2C%22%20%22%2C%22-%22)%2C%22${encodeURI("^-+|-+$")}%22%2C%22%22)%20%3D%20'${slug}'`,
     {
+      method: 'GET',
       headers: {
         Authorization: `Bearer ${process.env.AIRTABLE_PAT}`,
       },
-    },
+    }
   );
+  
+
 
   if (!request.ok) {
     if (request.status === 404) {
@@ -20,10 +23,8 @@ export async function getMechanism(slug: string) {
     throw new Error(JSON.stringify(await request.json(), null, 2));
   }
 
-  const responses = (await request.json());
+  const response = (await request.json()).records[0] as AirtableMechanism;
 
-  const mechanism = responses.records.find((response: any) => slugify(response.fields.Name) === slug) as AirtableMechanism;
-
-  return parseAirtableMechanism(mechanism);
+  return parseAirtableMechanism(response);
 
 }
