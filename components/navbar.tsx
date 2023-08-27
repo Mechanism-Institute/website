@@ -68,7 +68,7 @@ export default function Navbar() {
           <Transition
             as={Dialog.Content}
             aria-label="Menu"
-            className="fixed top-0 right-0 z-50 flex flex-col h-screen p-6 space-y-4 transition-all transform translate-x-full bg-gray-200 shadow-xl"
+            className="fixed top-0 right-0 z-50 flex flex-col h-screen p-6 space-y-4 bg-gray-200 shadow-xl"
             show={open}
             enter="transition-all transform ease-out duration-300"
             enterFrom="opacity-0 translate-x-full"
