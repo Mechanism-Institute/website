@@ -14,7 +14,6 @@ import Link from "next/link";
 import Globe from "@/components/ui/globe";
 import CategoryTag from "@/components/ui/category-tag";
 import { cn } from "@/utils/shadui";
-import CategoryCircle from "@/components/ui/category-circle";
 import clsx from "clsx";
 import { Input } from "@/components/ui/input";
 import { useAtom } from "jotai";

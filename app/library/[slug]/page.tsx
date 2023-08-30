@@ -23,7 +23,6 @@ async function getAggregatedMechanism(slug: string) {
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  console.log("PARAMS", params);
   const mechanism = await getAggregatedMechanism(params.slug);
 
   if (!mechanism)

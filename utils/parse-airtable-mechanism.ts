@@ -2,6 +2,7 @@ import { MechanismCategory } from "@/types/mechanism-category";
 import { CATEGORY_LABELS } from "@/config/categories";
 import { AirtableMechanism } from "@/types/airtable-mechanism";
 import { Mechanism } from "@/types/mechanism";
+import { slugify } from "@/utils/slugify";
 
 const flippedCapitalizedCategories = Object.fromEntries(
   Object.entries(CATEGORY_LABELS).map(([key, value]) => [value, key as MechanismCategory]),
@@ -13,11 +14,6 @@ function parseCategory(category: string): MechanismCategory {
 
 function sanitizeCategory(category: string) {
   return category.replace(/[^a-z0-9\s]/gi, "").trim();
-}
-
-export function slugify(text: string)
-{
-  return text.toLowerCase().replace(/\W+/g, '-').replace(/^-+|-+$/g, '');
 }
 
 export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Mechanism {
