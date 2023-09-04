@@ -2,6 +2,7 @@ import { MechanismCategory } from "@/types/mechanism-category";
 
 export type Mechanism = {
   id: string;
+  slug: string;
   createdTime: string;
   alternativeNames: string[];
   name: string;

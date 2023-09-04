@@ -6,6 +6,7 @@ export type AirtableMechanism = {
 
 type Fields = {
   Name: string;
+  Slug: string;
   Description: string;
   Type: string[];
   Implementations: string[];

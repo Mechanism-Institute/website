@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function MechanismCard({ mechanism }: { mechanism: Mechanism }) {
   return (
-    <Link href={`/mechanism/${mechanism.id}`}>
+    <Link href={`/library/${mechanism.slug}`}>
       <div className="flex flex-col h-full gap-6 p-6 transition duration-300 cursor-pointer bg-gray-50 hover:bg-white rounded-2xl hover:shadow-medium">
         <div className="flex flex-col flex-1 gap-4">
           <div className="flex flex-col flex-1 gap-4">

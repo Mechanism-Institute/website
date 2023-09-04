@@ -30,6 +30,7 @@ export function parseAirtableMechanism(airtableMechanism: AirtableMechanism): Me
 
   return {
     id: airtableMechanism.id,
+    slug: airtableMechanism.fields.Slug,
     createdTime: airtableMechanism.createdTime,
     name: airtableMechanism.fields.Name,
     alternativeNames: [airtableMechanism.fields.AlternativeNames].filter(Boolean),

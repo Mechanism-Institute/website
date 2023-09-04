@@ -4,15 +4,15 @@ import Link from "next/link";
 import Typography from "@/components/ui/typography";
 import ArrowLeft from "@/components/ui/arrow-left";
 import { AggregatedMechanism } from "@/types/mechanism";
-import { getMechanism } from "@/lib/get-mechanism";
+import { getMechanismsBySlug } from "@/lib/get-mechanism";
 import { getImplementations } from "@/lib/get-implementations";
 import { parseResourcesString } from "@/utils/parse-resources-string";
 import { Separator } from "@/components/ui/separator";
 import Implementation from "@/components/implementation";
 import ReactMarkdown from "react-markdown";
 
-async function getAggregatedMechanism(id: string) {
-  const mechanism = await getMechanism(id);
+async function getAggregatedMechanism(slug: string) {
+  const mechanism = await getMechanismsBySlug(slug);
   if (!mechanism) return null;
   const implementations = await getImplementations(mechanism.implementations);
   return {
