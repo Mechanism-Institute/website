@@ -73,7 +73,7 @@ export default function Page() {
           <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  In the near term, we plan to work closely with the crypto ecosystem on better mechanisms for decision-making, value capture, incentivization, authentication, credit, and reputation. In the longer-term, our focus will expand beyond crypto, employing blockchain-based mechanisms to tackle existential risks (Al, climate, nuclear, bio) and enhance human flourishing (wealth distribution, human rights, health, education, energy & food security, sovereignty).
+                  In the near term, we are working closely with the crypto ecosystem on better mechanisms for decision-making, value capture, incentivization, authentication, credit, and reputation. In the longer-term, our focus will expand beyond crypto, employing blockchain-based mechanisms to tackle existential risks (Al, climate, nuclear, bio) and enhance human flourishing (wealth distribution, human rights, health, education, energy & food security, sovereignty).
                 </Typography>
               </div>
           </div>
