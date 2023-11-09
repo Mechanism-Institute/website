@@ -27,7 +27,7 @@ function Bar() {
       params.set("search", value);
       return params.toString();
     },
-    [searchParams],
+    [searchParams, terms],
   );
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -66,8 +66,8 @@ function Bar() {
       </form>
       {terms && (
         <>
-          {terms?.map((term: string) => (
-            <div>
+          {terms?.map((term: string, i) => (
+            <div key={i}>
               <Typography variant="subtitle" className="inline-block">
                 Search results for:
               </Typography>

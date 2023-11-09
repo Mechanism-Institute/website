@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useRef } from "react";
-import { Input, InputProps } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import clsx from "clsx";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
