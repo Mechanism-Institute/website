@@ -4,6 +4,7 @@ import MechanismsList from "@/components/mechanisms-list";
 import { cn } from "@/utils/shadui";
 import SearchBar from "@/app/library/search-bar";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Mechanism Institute | Mechanism Library",
@@ -22,9 +23,11 @@ function CategoryFilters({ className }: { className?: string }) {
 export default async function Library() {
   return (
     <div className="flex flex-col gap-8 py-8 md:py-16">
-      <SearchBar />
-      <CategoryFilters />
-      <MechanismsList />
+      <Suspense fallback={null}>
+        <SearchBar />
+        <CategoryFilters />
+        <MechanismsList />
+      </Suspense>
     </div>
   );
 }
