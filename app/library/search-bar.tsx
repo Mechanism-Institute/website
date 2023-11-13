@@ -3,31 +3,23 @@
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback } from "react";
 import { storeLibrarySearch } from "@/lib/store-user-input";
 import Typography from "@/components/ui/typography";
 
 function Bar() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams()!;
-  const [terms, setSearchTerms] = useState<string[]>([]);
-
-  useEffect(() => {
-    const searchQuery = searchParams.get("search");
-    if (searchQuery) {
-      setSearchTerms([searchQuery]);
-    }
-  }, [searchParams]);
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search");
 
   const createQueryString = useCallback(
     (value: string) => {
       const params = new URLSearchParams(searchParams.toString());
-      console.log(terms, searchParams);
       params.set("search", value);
       return params.toString();
     },
-    [searchParams, terms],
+    [searchParams],
   );
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -42,7 +34,6 @@ function Bar() {
     if (search) {
       storeLibrarySearch(search);
     }
-    setSearchTerms([search]);
 
     router.push(pathname + "?" + createQueryString(search));
   };
@@ -64,19 +55,15 @@ function Bar() {
           className="pl-[62px] py-5"
         />
       </form>
-      {terms && (
-        <>
-          {terms?.map((term: string, i) => (
-            <div key={i}>
-              <Typography variant="subtitle" className="inline-block">
-                Search results for:
-              </Typography>
-              <Typography variant="subtitle" className="inline-block ml-2 font-bold">
-                {term}
-              </Typography>
-            </div>
-          ))}
-        </>
+      {search && (
+        <div>
+          <Typography variant="subtitle" className="inline-block">
+            Search results for:
+          </Typography>
+          <Typography variant="subtitle" className="inline-block ml-2 font-bold">
+            {search}
+          </Typography>
+        </div>
       )}
     </>
   );
