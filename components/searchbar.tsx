@@ -44,7 +44,7 @@ export default function SearchBar() {
                 ref={searchRef}
                 name="search"
                 type="text"
-                placeholder="Describe your challenge, get solutions."
+                placeholder="Search by mechanism, project, or keyword"
                 className="pr-[62px] w-full shadow-lg hover:shadow-medium"
                 autoComplete="off"
               />
