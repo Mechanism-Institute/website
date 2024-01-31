@@ -49,7 +49,7 @@ export default function Page() {
                   Research and Experimentation
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  We orchestrate cross-disciplinary research and targeted experiments that show how new mechanisms can help overcome complex coordination problems.
+                  We orchestrate cross-disciplinary research and targeted experiments that apply new mechanisms to complex coordination problems.
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
@@ -57,7 +57,7 @@ export default function Page() {
                   Design Space Mapping
                 </Typography>
                 <Typography variant="body" className="leading-[175%]">
-                  {`Our growing library of mechanism design patterns allows anyone to explore the wide range of mechanism solutions and real-world case studies.`}
+                  {`Our growing library of mechanism design patterns allows anyone to explore the wide range of mechanism solutions and relevant case studies.`}
                 </Typography>
               </div>
               <div className="flex flex-col gap-2">
@@ -73,7 +73,7 @@ export default function Page() {
           <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  In the near term, we are working closely with the crypto ecosystem on better mechanisms for capital formation, value capture, incentivization, decision-making, reputation, and more. In the longer-term, our focus will expand beyond crypto, employing blockchain-based mechanisms to tackle existential risks (Al, climate, nuclear, bio) and enhance human flourishing (wealth distribution, human rights, health, education, energy & food security, sovereignty).
+                  In the near term, we are working closely with the crypto ecosystem on better mechanisms for capital formation, value capture, incentivization, decision-making, reputation, and more. In the longer-term, our focus will expand beyond crypto, employing blockchain-based mechanisms to tackle existential risks (Al, climate, nuclear, bio) and enhance human flourishing (human rights, wealth distribution, health, education, supply chain, sovereignty).
                 </Typography>
               </div>
           </div>
