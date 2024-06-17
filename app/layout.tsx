@@ -11,17 +11,17 @@ import Footer from "@/components/footer";
 // the type is to ensure every category is covered
 const backgroundVariants: Record<MechanismCategory, string> = {
   "value-capture": "bg-orange",
-  market: "bg-purple",
-  "value-transfer": "bg-yellow",
+  exchange: "bg-purple",
+  "value-distribution": "bg-yellow",
   fundraising: "bg-green",
   governance: "bg-brown",
-  signaling: "bg-pink",
+  data: "bg-pink",
 };
 
 export const metadata: Metadata = {
   title: "Mechanism Institute",
   description:
-    "Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and apply mechanisms to solve coordination problems.",
+    "Mechanism Institute is a research initiative that shapes building blocks for digital-age institutions. We bring together thinkers and practitioners to study, develop, simulate, and deploy new on-chain mechanisms.",
   icons: [
     {
       url: "/favicon.ico",
