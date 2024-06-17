@@ -36,11 +36,13 @@ export default function Page() {
                 <Typography variant="body" className="leading-[175%]">
                   Blockchain-based mechanisms are a powerful tool for addressing the complex challenges of the 21st century. These mechanisms enable agreements that are:
                 </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  1. Self-executing: Automatically enforce their own conditions<br />
-                  2. Censorship-resistant: Cannot be interfered with by central authorities<br />
-                  3. Socially scalable: Coordinate an unbounded number of actors and interactions
-                </Typography>
+                <div className="pl-6">
+                  <Typography variant="body" className="leading-[175%]">
+                    1. Self-executing: Automatically enforce their own conditions<br />
+                    2. Censorship-resistant: Cannot be interfered with by central authorities<br />
+                    3. Socially scalable: Coordinate an unbounded number of actors and interactions
+                  </Typography>
+                </div>
                 <Typography variant="body" className="leading-[175%]">
                   With these properties, on-chain mechanisms offer a paradigm shift from legacy institutions. Yet, these mechanisms remain misunderstood and underexplored.
                 </Typography>
