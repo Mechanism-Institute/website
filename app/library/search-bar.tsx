@@ -51,7 +51,7 @@ function Bar() {
         <Input
           name="search"
           type="text"
-          placeholder="Search by mechanism, project, or keyword"
+          placeholder="Search by mechanism or keyword"
           className="pl-[62px] py-5"
         />
       </form>

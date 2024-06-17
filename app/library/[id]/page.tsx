@@ -109,7 +109,7 @@ export default async function Page({ params }: { params: { id: string } }) {
               {mechanism.implementations.length > 0 && (
                 <div className="flex flex-col gap-6">
                   <Typography variant="subtitle" className="font-medium text-stone font-gotham">
-                    Implementations
+                    Examples
                   </Typography>
                   {mechanism.implementations.map((implementation) => (
                     <Implementation key={implementation.id} implementation={implementation} />

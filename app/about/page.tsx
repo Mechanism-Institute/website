@@ -22,19 +22,32 @@ export default function Page() {
         <div className="flex flex-col max-w-[720px] gap-12">
           <div className="flex flex-col gap-6">
             <Typography variant="title2" className="text-stone font-gotham">
-              Enhancing coordination through mechanism design.
+              Advancing on-chain mechanisms
             </Typography>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Mechanism Institute is a think tank that advances building blocks for digital-age institutions. We bring together builders and researchers to study, develop, simulate, and deploy new coordination mechanisms.
+                  Mechanism Institute is a research initiative that shapes building blocks for digital-age institutions. We bring together thinkers and practitioners to study, develop, simulate, and deploy new <strong>on-chain mechanisms</strong>.
                 </Typography>
               </div>
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  We believe that traditional institutions are failing to meet the complex demands of the 21st century, and that blockchain-based mechanisms offer a powerful yet under-explored alternative. Our mission is to fundamentally upgrade how our societies function, paving the way for more efficient, resilient, and adaptive institutions that prioritize people and positive-sum outcomes.
+                  Blockchain-based mechanisms are a powerful tool for addressing the complex challenges of the 21st century. These mechanisms enable agreements that are:
+                </Typography>
+                <div className="pl-6">
+                  <Typography variant="body" className="leading-[175%]">
+                    1. Self-executing: Automatically enforce their own conditions<br />
+                    2. Censorship-resistant: Cannot be interfered with by central authorities<br />
+                    3. Socially scalable: Coordinate an unbounded number of actors and interactions
+                  </Typography>
+                </div>
+                <Typography variant="body" className="leading-[175%]">
+                  With these properties, on-chain mechanisms offer a paradigm shift from legacy institutions. Yet, these mechanisms remain misunderstood and underexplored.
+                </Typography>
+                <Typography variant="body" className="leading-[175%]">
+                  Our mission is to deepen understanding of the on-chain design space to pave the way for more resilient and robust institutions that prioritize positive-sum outcomes.
                 </Typography>
               </div>
             </div>
@@ -43,39 +56,30 @@ export default function Page() {
             <Typography variant="body" className="leading-[175%]">
               We achieve this through:
             </Typography>
-            <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Research and Experimentation
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  We orchestrate cross-disciplinary research, design competitions, and targeted experiments that show how to overcome particular coordination problems with different mechanisms.
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Design Space Mapping
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  {`Our growing library of mechanism design patterns allows anyone to explore the full range of solutions and learn from real-world case studies.`}
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Ecosystem Building
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  We facilitate knowledge sharing, collaboration, and innovation between partners in academia and industry that are committed to advancing mechanism design.
-                </Typography>
-              </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Design Space Mapping
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We curate a public library of on-chain mechanisms that allows anyone to explore the full design space.
+              </Typography>
             </div>
-          </div>
-          <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-2">
-                <Typography variant="body" className="leading-[175%]">
-                  In the near term, we are working closely with the crypto ecosystem on better mechanisms for decision-making, value capture, incentivization, authentication, credit, and reputation. In the longer-term, our focus will expand beyond crypto, employing blockchain-based mechanisms to tackle existential risks (Al, climate, nuclear, bio) and enhance human flourishing (wealth distribution, human rights, health, education, energy & food security, sovereignty).
-                </Typography>
-              </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Research
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We lead cross-disciplinary research to explore how on-chain mechanisms can be applied to a range of coordination problems.
+              </Typography>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Interventions
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We design solutions that apply on-chain mechanisms to specific use-cases across industry and civil society.
+              </Typography>
+            </div>
           </div>
         </div>
       </div>
