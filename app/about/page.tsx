@@ -56,31 +56,29 @@ export default function Page() {
             <Typography variant="body" className="leading-[175%]">
               We achieve this through:
             </Typography>
-            <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Design Space Mapping
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  We curate a public library of on-chain mechanisms that allows anyone to explore the full design space.
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Research
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  We lead cross-disciplinary research to explore how on-chain mechanisms can be applied to a range of coordination problems.
-                </Typography>
-              </div>
-              <div className="flex flex-col gap-2">
-                <Typography variant="subtitle2" className="text-stone font-gotham">
-                  Interventions
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  We design solutions that apply on-chain mechanisms to specific use-cases across industry and civil society.
-                </Typography>
-              </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Design Space Mapping
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We curate a public library of on-chain mechanisms that allows anyone to explore the full design space.
+              </Typography>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Research
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We lead cross-disciplinary research to explore how on-chain mechanisms can be applied to a range of coordination problems.
+              </Typography>
+            </div>
+            <div className="flex flex-col gap-2">
+              <Typography variant="subtitle2" className="text-stone font-gotham">
+                Interventions
+              </Typography>
+              <Typography variant="body" className="leading-[175%]">
+                We design solutions that apply on-chain mechanisms to specific use-cases across industry and civil society.
+              </Typography>
             </div>
           </div>
         </div>
