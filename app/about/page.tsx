@@ -22,19 +22,19 @@ export default function Page() {
         <div className="flex flex-col max-w-[720px] gap-12">
           <div className="flex flex-col gap-6">
             <Typography variant="title2" className="text-stone font-gotham">
-              Advancing on-chain mechanisms
+              Decentralizing coordination, one mechanism at a time
             </Typography>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Mechanism Institute is a research initiative that shapes building blocks for digital-age institutions. We bring together thinkers and practitioners to study, develop, simulate, and deploy new <strong>on-chain mechanisms</strong>.
+                  Mechanism Institute is a research hub that advances onchain mechanisms. Our mission is to empower communities worldwide to design and deploy mechanisms that unlock new forms of coordination.
                 </Typography>
               </div>
             </div>
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-2">
                 <Typography variant="body" className="leading-[175%]">
-                  Blockchain-based mechanisms are a powerful tool for addressing the complex challenges of the 21st century. These mechanisms enable agreements that are:
+                  Blockchain-based mechanisms represent a paradigm shift from legacy institutions, enabling agreements that are:
                 </Typography>
                 <div className="pl-6">
                   <Typography variant="body" className="leading-[175%]">
@@ -44,40 +44,37 @@ export default function Page() {
                   </Typography>
                 </div>
                 <Typography variant="body" className="leading-[175%]">
-                  With these properties, on-chain mechanisms offer a paradigm shift from legacy institutions. Yet, these mechanisms remain misunderstood and underexplored.
-                </Typography>
-                <Typography variant="body" className="leading-[175%]">
-                  Our mission is to deepen understanding of the on-chain design space to pave the way for more resilient and robust institutions that prioritize positive-sum outcomes.
+                  Yet, these mechanisms remain underexplored and poorly understood.
                 </Typography>
               </div>
             </div>
           </div>
           <div className="flex flex-col gap-6">
             <Typography variant="body" className="leading-[175%]">
-              We achieve this through:
+              Our Theory of Change centers on:
             </Typography>
             <div className="flex flex-col gap-2">
               <Typography variant="subtitle2" className="text-stone font-gotham">
-                Design Space Mapping
+                The Library
               </Typography>
               <Typography variant="body" className="leading-[175%]">
-                We curate a public library of on-chain mechanisms that allows anyone to explore the full design space.
+                Mapping the mechanism design space to illuminate the range of onchain experiments conducted to date.
               </Typography>
             </div>
             <div className="flex flex-col gap-2">
               <Typography variant="subtitle2" className="text-stone font-gotham">
-                Research
+                Research Reports
               </Typography>
               <Typography variant="body" className="leading-[175%]">
-                We lead cross-disciplinary research to explore how on-chain mechanisms can be applied to a range of coordination problems.
+                Deep-diving into how existing mechanisms can be composed to solve complex problems in specific domains.
               </Typography>
             </div>
             <div className="flex flex-col gap-2">
               <Typography variant="subtitle2" className="text-stone font-gotham">
-                Interventions
+                Inventions & Interventions
               </Typography>
               <Typography variant="body" className="leading-[175%]">
-                We design solutions that apply on-chain mechanisms to specific use-cases across industry and civil society.
+                Designing new mechanisms and orchestrating real-world interventions that accelerate the shift to intermediary-less institutions.
               </Typography>
             </div>
           </div>
