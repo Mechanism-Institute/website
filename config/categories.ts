@@ -24,7 +24,7 @@ export const CATEGORIES_BACKGROUNDS: Record<MechanismCategory, string> = {
   "value-capture": "bg-orange",
   "exchange": "bg-purple",
   "allocation": "bg-yellow",
-  "rewards-penalties": "bg-blue",
+  "rewards-penalties": "bg-teal",
   fundraising: "bg-green",
   governance: "bg-brown",
   data: "bg-pink",
