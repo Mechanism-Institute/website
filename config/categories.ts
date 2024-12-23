@@ -2,30 +2,30 @@ import { MechanismCategory } from "@/types/mechanism-category";
 
 export const CATEGORIES = [
   "fundraising",
-  "value-capture",
   "allocation",
+  "value-capture",
+  "governance",
   "rewards-and-penalties",
   "exchange",
-  "governance",
   "data",
 ] as const;
 
 export const CATEGORY_LABELS: Record<MechanismCategory, string> = {
-  "value-capture": "Value Capture",
-  "exchange": "Exchange",
+  "fundraising": "Fundraising",
   "allocation": "Allocation",
-  "rewards-and-penalties": "Rewards And Penalties",
-  fundraising: "Fundraising",
-  governance: "Governance",
-  data: "Data",
+  "value-capture": "Value Capture",
+  "governance": "Governance",
+  "rewards-and-penalties": "Rewards and Penalties",
+  "exchange": "Exchange",
+  "data": "Data",
 };
 
 export const CATEGORIES_BACKGROUNDS: Record<MechanismCategory, string> = {
-  "value-capture": "bg-orange",
-  "exchange": "bg-purple",
+  "fundraising": "bg-green",
   "allocation": "bg-yellow",
+  "value-capture": "bg-orange",
+  "governance": "bg-brown",
   "rewards-and-penalties": "bg-teal",
-  fundraising: "bg-green",
-  governance: "bg-brown",
-  data: "bg-pink",
+  "exchange": "bg-purple",
+  "data": "bg-pink",
 };

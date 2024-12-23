@@ -10,13 +10,13 @@ import Footer from "@/components/footer";
 // this is needed because otherwise the tailwind JIT compiler will not be able to find the dynamic classes
 // the type is to ensure every category is covered
 const backgroundVariants: Record<MechanismCategory, string> = {
-  "value-capture": "bg-orange",
-  exchange: "bg-purple",
+  "fundraising": "bg-green",
   "allocation": "bg-yellow",
-  fundraising: "bg-green",
+  "value-capture": "bg-orange",
+  "governance": "bg-brown",
   "rewards-and-penalties": "bg-teal",
-  governance: "bg-brown",
-  data: "bg-pink",
+  "exchange": "bg-purple",
+  "data": "bg-pink",
 };
 
 export const metadata: Metadata = {
