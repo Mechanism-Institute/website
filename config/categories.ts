@@ -14,7 +14,7 @@ export const CATEGORY_LABELS: Record<MechanismCategory, string> = {
   "value-capture": "Value Capture",
   "exchange": "Exchange",
   "allocation": "Allocation",
-  "rewards-and-penalties": "Rewards and Penalties",
+  "rewards-and-penalties": "Rewards And Penalties",
   fundraising: "Fundraising",
   governance: "Governance",
   data: "Data",
