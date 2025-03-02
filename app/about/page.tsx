@@ -62,7 +62,7 @@ export default function Page() {
               We partner with researchers and institutions looking to understand and apply onchain mechanisms to new domains. Our work has been financially supported by <Link href="https://www.gitcoin.co/" className="underline" target="_blank">Gitcoin</Link> and <Link href="https://optimism.io/" className="underline" target="_blank">Optimism</Link>, and we actively collaborate with <Link href="https://blockchaingov.eu/" className="underline" target="_blank">BlockchainGov</Link> on research and library maintenance.
             </Typography>
             <Typography variant="body" className="leading-[175%] mt-4">
-              If you're interested in working with us, reach out at <Link href="mailto:hello@mechanism.institute" className="underline">hello@mechanism.institute</Link>.
+              If you are interested in working with us, reach out at <Link href="mailto:hello@mechanism.institute" className="underline">hello@mechanism.institute</Link>.
             </Typography>
           </div>
         </div>

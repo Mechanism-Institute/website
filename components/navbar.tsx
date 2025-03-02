@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import Typography from "@/components/ui/typography";
@@ -12,17 +11,15 @@ import { useAtom } from "jotai";
 import { supporterDialogAtom } from "@/state/supporter-atom";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import X from "@/components/ui/x";
 
 export default function Navbar() {
   const [, setDialogOpen] = useAtom(supporterDialogAtom);
   const [open, setOpen] = useState(false);
-
   const activePage = usePathname();
   const isHome = activePage === "/";
-
   const activeClasses =
     "underline underline-offset-[49px] decoration-4 decoration-gray-900 text-gray-900";
-
   return (
     <nav className="flex items-center justify-between w-full px-2 py-8 border-b border-divider">
       <Link href="/" className="transition-opacity duration-300 cursor-pointer hover:opacity-70">
@@ -33,7 +30,7 @@ export default function Navbar() {
           height={40}
         />
       </Link>
-      <div className="hidden gap-10 md:flex">
+      <div className="hidden gap-10 md:flex items-center">
         <Typography
           className={clsx(activePage === "/about" && activeClasses)}
           variant="nav-link"
@@ -57,8 +54,15 @@ export default function Navbar() {
         >
           Connect
         </Typography>
+        <Link 
+          href="https://x.com/mechanism_inst" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="ml-2 transition-opacity duration-300 hover:opacity-70 text-gray-600"
+        >
+          <X width={16} height={16} />
+        </Link>
       </div>
-
       <div className="md:hidden">
         <Dialog.Root open={open} onOpenChange={setOpen}>
           <Dialog.Trigger className="button">
@@ -95,6 +99,17 @@ export default function Navbar() {
               }}
             >
               Get Involved
+            </Typography>
+            <Typography variant="nav-link" asChild>
+              <Link 
+                href="https://x.com/mechanism_inst" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+                onClick={() => setOpen(false)}
+              >
+                X <X width={16} height={16} />
+              </Link>
             </Typography>
           </Transition>
         </Dialog.Root>
