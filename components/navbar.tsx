@@ -55,7 +55,7 @@ export default function Navbar() {
             setDialogOpen(true);
           }}
         >
-          Get Involved
+          Connect
         </Typography>
       </div>
 

@@ -13,31 +13,19 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { useState } from "react";
 import { useMutation } from "react-query";
-import Select from "react-select";
 import { storeGetInvolvedSubmit } from "@/lib/store-user-input";
 
 const formSchema = z.object({
   name: z.string().nonempty(),
   email: z.string().email(),
-  twitter: z.string().optional(),
-  involvement: z.array(z.string().nonempty()),
+  x: z.string().optional(),  // Changed from twitter to x
+  message: z.string().optional(),
 });
-
-const options = [
-  "Working with an MI expert",
-  "Partnering as an organization",
-  "Become an MI researcher",
-  "Contribute to the Library",
-  "Competitions & events",
-  "Newsletter & reports",
-].map((option) => ({
-  value: option,
-  label: option,
-}));
 
 export default function SupporterDialog() {
   const [submitted, setSubmitted] = useState(false);
   const [open, setOpen] = useAtom(supporterDialogAtom);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,7 +33,18 @@ export default function SupporterDialog() {
 
   const { mutate, isLoading } = useMutation<void, Error, z.infer<typeof formSchema>>({
     mutationFn: async (values) => {
-      await storeGetInvolvedSubmit({ ...values });
+      setError(null);
+      try {
+        const response = await storeGetInvolvedSubmit(values);
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(text || "Failed to submit form");
+        }
+      } catch (err) {
+        console.error("Submission error:", err);
+        setError(err instanceof Error ? err.message : "Unknown error occurred");
+        throw err;
+      }
     },
     onSuccess: () => {
       setSubmitted(true);
@@ -53,6 +52,7 @@ export default function SupporterDialog() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log("Submitting form with values:", values);
     mutate(values);
   }
 
@@ -60,6 +60,7 @@ export default function SupporterDialog() {
     setOpen(isOpen);
     if (!isOpen) {
       form.reset();
+      setError(null);
       setTimeout(() => {
         setSubmitted(false);
       }, 500);
@@ -81,7 +82,7 @@ export default function SupporterDialog() {
         ) : (
           <>
             <Typography className="text-stone font-gotham leading-full text-[32px]">
-              Get Involved
+              Get in touch
             </Typography>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-6">
@@ -127,15 +128,15 @@ export default function SupporterDialog() {
                 />
                 <FormField
                   control={form.control}
-                  name="twitter"
+                  name="x"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Twitter
+                        X
                         <FormControl>
                           <Input
                             type="text"
-                            placeholder="Twitter"
+                            placeholder="X"
                             className="border border-gray-400 bg-gray-50"
                             {...field}
                           />
@@ -146,39 +147,27 @@ export default function SupporterDialog() {
                 />
                 <FormField
                   control={form.control}
-                  name="involvement"
+                  name="message"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        How would you like to get involved?<span className="text-orange">*</span>
+                        Message
                       </FormLabel>
-                      <Select
-                        closeMenuOnSelect={false}
-                        required
-                        value={field.value?.map((value) => ({
-                          value,
-                          label: value,
-                        }))}
-                        onChange={(newValue) => {
-                          const values = newValue.map((value) => value.value);
-                          form.setValue("involvement", values);
-                        }}
-                        classNames={{
-                          control: () =>
-                            "!rounded-2xl py-4 px-6 !border !border-gray-400 !bg-gray-50",
-                          valueContainer: () => "!p-0 !m-0",
-                          input: () => "!m-0 !p-0",
-                          indicatorSeparator: () => "!w-0",
-                          placeholder: () => "!mx-0 !text-gray-400",
-                          dropdownIndicator: () => "!p-0",
-                        }}
-                        isMulti
-                        name="involvement"
-                        options={options}
-                      ></Select>
+                      <FormControl>
+                        <textarea
+                          placeholder="Enter your message"
+                          className="w-full min-h-[100px] px-3 py-2 border border-gray-400 bg-gray-50 rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-y"
+                          {...field}
+                        />
+                      </FormControl>
                     </FormItem>
                   )}
                 />
+                {error && (
+                  <div className="text-red-500 text-sm">
+                    Error: {error}
+                  </div>
+                )}
                 <div className="flex justify-end">
                   <Button variant="primary" className="gap-1" disabled={isLoading}>
                     {isLoading ? "Submitting..." : "Submit"}

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Mail from "./ui/mail";
-import Twitter from "./ui/twitter";
+import X from "./ui/x";
 import Link from "next/link";
 import Typography from "./ui/typography";
 
@@ -18,12 +18,12 @@ export default function Footer() {
           </Typography>
         </Link>
         <Link
-          href="https://twitter.com/mechanism_inst"
+          href="https://x.com/mechanism_inst"
           target="_blank"
           rel="noredirect"
           className="flex items-center gap-2 text-gray-500 duration-300 cursor-pointer group hover:text-gray-700"
         >
-          <Twitter width={20} height={20} />
+          <X width={20} height={20} />
           <Typography className="text-xs text-gray-500 underline transition-colors duration-300 group-hover:text-gray-700">
             mechanism_inst
           </Typography>
