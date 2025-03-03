@@ -35,11 +35,11 @@ export default function Page() {
             <div className="pl-6 mt-2">
               <Typography variant="body" className="leading-[175%]">
                 - <em>Fundraising</em>: Coordinating the flow of capital into a system.<br />
-                - <em>Allocation</em>: Determining how resources are distributed.<br />
-                - <em>Value Capture</em>: Structuring how value is retained and redistributed.<br />
+                - <em>Allocation</em>: Distributing scarce resources among participants.<br />
+                - <em>Value Capture</em>: Retaining and monetizing generated value.<br />
                 - <em>Rewards & Penalties</em>: Shaping incentives to influence behavior.<br />
                 - <em>Exchange</em>: Facilitating the transfer, trade, and pricing of assets.<br />
-                - <em>Governance</em>: Establishing processes for collective decision-making.<br />
+                - <em>Governance</em>: Structuring permissions and decision-making rules.<br />
                 - <em>Data</em>: Managing information flow, integrity, and access.
               </Typography>
             </div>
@@ -50,7 +50,7 @@ export default function Page() {
               Research
             </Typography>
             <Typography variant="body" className="leading-[175%]">
-              We investigate how mechanisms can be applied to solve complex problems across domains, including <Link href="https://paragraph.xyz/@mechanism.institute/prediction-markets" className="underline" target="_blank">prediction markets</Link>, <Link href="https://paragraph.xyz/@mechanism.institute/public-goods" className="underline" target="_blank">public goods</Link>, <Link href="https://www.projectliberty.io/wp-content/uploads/2024/06/PL_Toolkit_Report_v7.pdf" className="underline" target="_blank">governance</Link>, <Link href="https://research.allo.capital/t/futarchy-let-the-markets-decide/157" className="underline" target="_blank">venture studios</Link>, <Link href="https://github.com/Mechanism-Institute/slashing-engine" className="underline" target="_blank">sybil prevention</Link>, <Link href="https://youtu.be/Lr9-D9lU4cs?si=M10aRnwXTquykExK" className="underline" target="_blank">network sovereignties</Link>, <Link href="https://observablehq.com/@mechanisminstitute/impact-measurement" className="underline" target="_blank">impact measurement</Link>, and <Link href="https://observablehq.com/@mechanisminstitute/5-research-directions-for-blockchain-mechanisms" className="underline" target="_blank">more</Link>.
+              We investigate how mechanisms can solve complex problems across <Link href="https://paragraph.xyz/@mechanism.institute/prediction-markets" className="underline" target="_blank">prediction markets</Link>, <Link href="https://paragraph.xyz/@mechanism.institute/public-goods" className="underline" target="_blank">public goods</Link>, <Link href="https://www.projectliberty.io/wp-content/uploads/2024/06/PL_Toolkit_Report_v7.pdf" className="underline" target="_blank">governance</Link>, <Link href="https://agentcoin.tv/blog/agentcointv-has-arrived-the-future-of-streaming-ai-and-crypto" className="underline" target="_blank">streaming</Link>, <Link href="https://research.allo.capital/t/futarchy-let-the-markets-decide" className="underline" target="_blank">futarchy</Link>, <Link href="https://github.com/Mechanism-Institute/slashing-engine" className="underline" target="_blank">sybil prevention</Link>, <Link href="https://x.com/orishim/status/1882064487718777094" className="underline" target="_blank">p2p commerce</Link>, <Link href="https://youtu.be/Lr9-D9lU4cs?si=M10aRnwXTquykExK" className="underline" target="_blank">network sovereignties</Link>, <Link href="https://observablehq.com/@mechanisminstitute/impact-measurement" className="underline" target="_blank">impact measurement</Link>, and <Link href="https://observablehq.com/@mechanisminstitute/5-research-directions-for-blockchain-mechanisms" className="underline" target="_blank">more</Link>.
             </Typography>
           </div>
           

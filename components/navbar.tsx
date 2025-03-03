@@ -108,7 +108,7 @@ export default function Navbar() {
                 className="flex items-center gap-2"
                 onClick={() => setOpen(false)}
               >
-                X <X width={16} height={16} />
+                <X width={16} height={16} />
               </Link>
             </Typography>
           </Transition>
